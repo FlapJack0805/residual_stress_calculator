@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/cmake_install.cmake",
+		"/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/_deps/cli11-build/cmake_install.cmake",
+		"/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/_deps/cli11-build/fuzz/cmake_install.cmake",
+		"/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/_deps/cli11-build/src/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
