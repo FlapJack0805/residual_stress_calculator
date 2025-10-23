@@ -14,6 +14,43 @@
 # EXTERNAL cache entries
 ########################
 
+//Activate the debug messages of the script FindBoost
+Boost_DEBUG:BOOL=OFF
+
+//The directory containing a CMake configuration file for Boost.
+Boost_DIR:PATH=/usr/lib/cmake/Boost-1.88.0
+
+//Path to a file.
+Boost_INCLUDE_DIR:PATH=/usr/include
+
+//Link with static Boost libraries
+CGAL_Boost_USE_STATIC_LIBS:BOOL=OFF
+
+//Setting for advanced users that what to change the default number
+// types used in filtered kernels. Some options might not be working
+// depending on how you configured your build.
+CGAL_CMAKE_EXACT_NT_BACKEND:STRING=Default
+
+//Display memory and real time usage at end of CTest test outputs
+CGAL_CTEST_DISPLAY_MEM_AND_TIME:BOOL=OFF
+
+//Activate the CGAL developers mode. See https://github.com/CGAL/cgal/wiki/CGAL_DEV_MODE
+CGAL_DEV_MODE:BOOL=OFF
+
+//The directory containing a CMake configuration file for CGAL.
+CGAL_DIR:PATH=/usr/lib/cmake/CGAL
+
+//Build the testing tree.
+CGAL_ENABLE_TESTING:BOOL=OFF
+
+//If set, the ctest command will not skip the tests of the draw
+// functions.
+CGAL_TEST_DRAW_FUNCTIONS:BOOL=OFF
+
+//Use CGAL with GMPXX: use C++ classes of GNU MP instead of CGAL
+// wrappers
+CGAL_WITH_GMPXX:BOOL=ON
+
 //Value Computed by CMake
 CLI11_BINARY_DIR:STATIC=/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/_deps/cli11-build
 
@@ -296,8 +333,34 @@ FETCHCONTENT_UPDATES_DISCONNECTED_CLI11:BOOL=OFF
 //Git command line client
 GIT_EXECUTABLE:FILEPATH=/usr/bin/git
 
+//The directory containing the GMPXX include files
+GMPXX_INCLUDE_DIR:PATH=/usr/include
+
+//Path to the GMPXX library
+GMPXX_LIBRARIES:FILEPATH=/usr/lib/libgmpxx.so
+
+//The directory containing the GMP header files
+GMP_INCLUDE_DIR:PATH=/usr/include
+
+//Path to the Debug GMP library
+GMP_LIBRARY_DEBUG:FILEPATH=/usr/lib/libgmp.so
+
+//Path to the Release GMP library
+GMP_LIBRARY_RELEASE:FILEPATH=/lib/libgmp.so
+
+//The directory containing the MPFR header files
+MPFR_INCLUDE_DIR:PATH=/usr/include
+
+//Path to the MPFR library
+MPFR_LIBRARIES:FILEPATH=/lib/libmpfr.so
+
+MPFR_LIBRARIES_DIR:FILEPATH=/lib
+
 //Path to a library.
 NLOPT_LIB:FILEPATH=/usr/lib/libnlopt.so
+
+//The directory containing a CMake configuration file for boost_headers.
+boost_headers_DIR:PATH=/usr/lib/cmake/boost_headers-1.88.0
 
 //Value Computed by CMake
 residual_stress_estimator_BINARY_DIR:STATIC=/home/jstifter/code/research/residual_stress/residual_stress_estimator/build
@@ -313,6 +376,18 @@ residual_stress_estimator_SOURCE_DIR:STATIC=/home/jstifter/code/research/residua
 # INTERNAL cache entries
 ########################
 
+//ADVANCED property for variable: Boost_DEBUG
+Boost_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_DIR
+Boost_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CGAL_Boost_USE_STATIC_LIBS
+CGAL_Boost_USE_STATIC_LIBS-ADVANCED:INTERNAL=1
+//STRINGS property for variable: CGAL_CMAKE_EXACT_NT_BACKEND
+CGAL_CMAKE_EXACT_NT_BACKEND-STRINGS:INTERNAL=GMP_BACKEND;GMPXX_BACKEND;BOOST_GMP_BACKEND;BOOST_BACKEND;LEDA_BACKEND;MP_FLOAT_BACKEND;Default
+//CGAL library is configured to use GMP
+CGAL_USE_GMP:INTERNAL=TRUE
+//CGAL library is configured to use MPFR
+CGAL_USE_MPFR:INTERNAL=TRUE
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -377,6 +452,8 @@ CMAKE_GENERATOR_INSTANCE:INTERNAL=
 CMAKE_GENERATOR_PLATFORM:INTERNAL=
 //Name of generator toolset.
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
+//Test CMAKE_HAVE_LIBC_PTHREAD
+CMAKE_HAVE_LIBC_PTHREAD:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/home/jstifter/code/research/residual_stress/residual_stress_estimator
@@ -478,8 +555,18 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding Boost
+FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/lib/cmake/Boost-1.88.0/BoostConfig.cmake][ ][v1.88.0(1.72)]
+//Details about finding GMP
+FIND_PACKAGE_MESSAGE_DETAILS_GMP:INTERNAL=[/lib/libgmp.so][/usr/include][v()]
+//Details about finding MPFR
+FIND_PACKAGE_MESSAGE_DETAILS_MPFR:INTERNAL=[/lib/libmpfr.so][/usr/include][v()]
+//Details about finding Threads
+FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //ADVANCED property for variable: GIT_EXECUTABLE
 GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
+//ADVANCED property for variable: boost_headers_DIR
+boost_headers_DIR-ADVANCED:INTERNAL=1
 

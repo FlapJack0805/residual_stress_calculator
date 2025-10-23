@@ -72,24 +72,66 @@ include CMakeFiles/residual_stress_estimator.dir/flags.make
 CMakeFiles/residual_stress_estimator.dir/codegen:
 .PHONY : CMakeFiles/residual_stress_estimator.dir/codegen
 
-CMakeFiles/residual_stress_estimator.dir/src/force_estimator.cpp.o: CMakeFiles/residual_stress_estimator.dir/flags.make
-CMakeFiles/residual_stress_estimator.dir/src/force_estimator.cpp.o: /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/force_estimator.cpp
-CMakeFiles/residual_stress_estimator.dir/src/force_estimator.cpp.o: CMakeFiles/residual_stress_estimator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/residual_stress_estimator.dir/src/force_estimator.cpp.o"
-	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/residual_stress_estimator.dir/src/force_estimator.cpp.o -MF CMakeFiles/residual_stress_estimator.dir/src/force_estimator.cpp.o.d -o CMakeFiles/residual_stress_estimator.dir/src/force_estimator.cpp.o -c /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/force_estimator.cpp
+CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o: CMakeFiles/residual_stress_estimator.dir/flags.make
+CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o: /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/mesh_handler.cpp
+CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o: CMakeFiles/residual_stress_estimator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o -MF CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o.d -o CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o -c /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/mesh_handler.cpp
 
-CMakeFiles/residual_stress_estimator.dir/src/force_estimator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/residual_stress_estimator.dir/src/force_estimator.cpp.i"
-	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/force_estimator.cpp > CMakeFiles/residual_stress_estimator.dir/src/force_estimator.cpp.i
+CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.i"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/mesh_handler.cpp > CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.i
 
-CMakeFiles/residual_stress_estimator.dir/src/force_estimator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/residual_stress_estimator.dir/src/force_estimator.cpp.s"
-	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/force_estimator.cpp -o CMakeFiles/residual_stress_estimator.dir/src/force_estimator.cpp.s
+CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.s"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/mesh_handler.cpp -o CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.s
+
+CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o: CMakeFiles/residual_stress_estimator.dir/flags.make
+CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o: /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/fea_solver.cpp
+CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o: CMakeFiles/residual_stress_estimator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o -MF CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o.d -o CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o -c /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/fea_solver.cpp
+
+CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.i"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/fea_solver.cpp > CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.i
+
+CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.s"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/fea_solver.cpp -o CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.s
+
+CMakeFiles/residual_stress_estimator.dir/src/optimizer.cpp.o: CMakeFiles/residual_stress_estimator.dir/flags.make
+CMakeFiles/residual_stress_estimator.dir/src/optimizer.cpp.o: /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/optimizer.cpp
+CMakeFiles/residual_stress_estimator.dir/src/optimizer.cpp.o: CMakeFiles/residual_stress_estimator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/residual_stress_estimator.dir/src/optimizer.cpp.o"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/residual_stress_estimator.dir/src/optimizer.cpp.o -MF CMakeFiles/residual_stress_estimator.dir/src/optimizer.cpp.o.d -o CMakeFiles/residual_stress_estimator.dir/src/optimizer.cpp.o -c /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/optimizer.cpp
+
+CMakeFiles/residual_stress_estimator.dir/src/optimizer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/residual_stress_estimator.dir/src/optimizer.cpp.i"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/optimizer.cpp > CMakeFiles/residual_stress_estimator.dir/src/optimizer.cpp.i
+
+CMakeFiles/residual_stress_estimator.dir/src/optimizer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/residual_stress_estimator.dir/src/optimizer.cpp.s"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/optimizer.cpp -o CMakeFiles/residual_stress_estimator.dir/src/optimizer.cpp.s
+
+CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o: CMakeFiles/residual_stress_estimator.dir/flags.make
+CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o: /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/stress_field.cpp
+CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o: CMakeFiles/residual_stress_estimator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o -MF CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o.d -o CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o -c /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/stress_field.cpp
+
+CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.i"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/stress_field.cpp > CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.i
+
+CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.s"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/stress_field.cpp -o CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.s
 
 CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o: CMakeFiles/residual_stress_estimator.dir/flags.make
 CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o: /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/main.cpp
 CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o: CMakeFiles/residual_stress_estimator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o"
 	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o -MF CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o.d -o CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o -c /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/main.cpp
 
 CMakeFiles/residual_stress_estimator.dir/src/main.cpp.i: cmake_force
@@ -102,23 +144,32 @@ CMakeFiles/residual_stress_estimator.dir/src/main.cpp.s: cmake_force
 
 # Object files for target residual_stress_estimator
 residual_stress_estimator_OBJECTS = \
-"CMakeFiles/residual_stress_estimator.dir/src/force_estimator.cpp.o" \
+"CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o" \
+"CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o" \
+"CMakeFiles/residual_stress_estimator.dir/src/optimizer.cpp.o" \
+"CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o" \
 "CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o"
 
 # External object files for target residual_stress_estimator
 residual_stress_estimator_EXTERNAL_OBJECTS =
 
-residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/src/force_estimator.cpp.o
-residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o
-residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/build.make
-residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/compiler_depend.ts
-residual_stress_estimator: /usr/lib/libnlopt.so
-residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable residual_stress_estimator"
+bin/residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o
+bin/residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o
+bin/residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/src/optimizer.cpp.o
+bin/residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o
+bin/residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o
+bin/residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/build.make
+bin/residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/compiler_depend.ts
+bin/residual_stress_estimator: /usr/lib/libnlopt.so
+bin/residual_stress_estimator: /usr/lib/libgmpxx.so
+bin/residual_stress_estimator: /lib/libmpfr.so
+bin/residual_stress_estimator: /lib/libgmp.so
+bin/residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable bin/residual_stress_estimator"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/residual_stress_estimator.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/residual_stress_estimator.dir/build: residual_stress_estimator
+CMakeFiles/residual_stress_estimator.dir/build: bin/residual_stress_estimator
 .PHONY : CMakeFiles/residual_stress_estimator.dir/build
 
 CMakeFiles/residual_stress_estimator.dir/clean:

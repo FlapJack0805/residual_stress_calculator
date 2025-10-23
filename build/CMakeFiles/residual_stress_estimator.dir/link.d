@@ -1,12 +1,18 @@
-residual_stress_estimator: \
+bin/residual_stress_estimator: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o \
-  CMakeFiles/residual_stress_estimator.dir/src/force_estimator.cpp.o \
+  CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o \
+  CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o \
+  CMakeFiles/residual_stress_estimator.dir/src/optimizer.cpp.o \
+  CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o \
   CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o \
+  /usr/lib/libnlopt.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgmp.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libmpfr.so \
-  /usr/lib/libnlopt.so \
+  /usr/lib/libgmpxx.so \
+  /lib/libmpfr.so \
+  /lib/libgmp.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libstdc++.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libm.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libm.so \
@@ -41,15 +47,27 @@ residual_stress_estimator: \
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o:
 
-CMakeFiles/residual_stress_estimator.dir/src/force_estimator.cpp.o:
+CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o:
+
+CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o:
+
+CMakeFiles/residual_stress_estimator.dir/src/optimizer.cpp.o:
+
+CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 
 CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o:
+
+/usr/lib/libnlopt.so:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgmp.so:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libmpfr.so:
 
-/usr/lib/libnlopt.so:
+/usr/lib/libgmpxx.so:
+
+/lib/libmpfr.so:
+
+/lib/libgmp.so:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libstdc++.so:
 
