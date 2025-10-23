@@ -1,4 +1,5 @@
 #include <CGAL/Simple_cartesian.h>
+#include <memory>
 #include <CGAL/Search_traits_2.h>
 #include <CGAL/Kd_tree.h>
 #include <CGAL/Fuzzy_iso_box.h>
@@ -14,7 +15,7 @@
 #include <CGAL/Mesh_triangulation_3.h>
 #include <CGAL/Mesh_complex_3_in_triangulation_3.h>
 
-#include <CGAL/Polyhedral_mesh_domain_with_features_3.h>   // <- use this
+#include <CGAL/Polyhedral_mesh_domain_with_features_3.h>
 #include <CGAL/Mesh_triangulation_3.h>               
 #include <CGAL/Mesh_complex_3_in_triangulation_3.h>  
 #include <CGAL/Polygon_mesh_processing/orientation.h>
@@ -48,7 +49,10 @@
 #include <CGAL/Kernel/global_functions_3.h>
 #include <CGAL/perturb_mesh_3.h>   
 
+#include "nlopt.hpp"
+
 #include <filesystem>
+#include <string>
 
 using Kernel = CGAL::Exact_predicates_inexact_constructions_kernel;
 //using Kernel = CGAL::Simple_cartesian<double>;
@@ -63,6 +67,10 @@ using Vertex_descriptor = boost::graph_traits<Surface_mesh>::vertex_descriptor;
 using Primitive = CGAL::AABB_face_graph_triangle_primitive<Surface_mesh>;
 using Traits = CGAL::AABB_traits_3<Kernel, Primitive>;
 using Tree = CGAL::AABB_tree<Traits>;
+
+#pragma once
+class FEA; 
+class MeshHandler;
 
 
 /*
@@ -79,7 +87,7 @@ enum class NodeStatus
 };
 
 
-struct UnitVector
+struct MyVector
 {
 	double x, y, z;
 };
@@ -97,17 +105,25 @@ struct StressTensor
 
 struct Node
 {
-	Vertex_descriptor v;
+	Tr::Vertex_handle handle;
 	Point position;
-	UnitVector normal_vector;
+	MyVector normal_vector;
 	StressTensor stress;
 	NodeStatus status;
 	bool is_boundary;
+	std::vector<MyVector> deformations; // store all deformations so we can backtrack at the end to get to origional location
 
-	Node(Vertex_descriptor v_in, Point position_in, UnitVector normal_vector_in)
-	: v(v_in), position(position_in), normal_vector(normal_vector_in), status(NodeStatus::UN_CUT), is_boundary(false) {}
+	Node(Tr::Vertex_handle handle_in, Point position_in, MyVector normal_vector_in)
+	: handle(handle_in), position(position_in), normal_vector(normal_vector_in), status(NodeStatus::UN_CUT), is_boundary(false) {}
 
 	Node() : status(NodeStatus::UN_CUT), is_boundary(false) {}
+};
+
+
+struct OptimizationContext 
+{
+    MeshHandler* handler;
+    Surface_mesh* goal_mesh;
 };
 
 
@@ -116,11 +132,11 @@ class MeshHandler
 {
 	C3t3 volume_mesh;
 	std::vector<std::shared_ptr<Node>> nodes; // each index is the node id
-	
+	void set_tool_path(const std::filesystem::path& tool_path_stl);
 
 public:
 	MeshHandler(const std::filesystem::path& mesh_stl, const std::filesystem::path& boundary_stl);
-	void set_tool_path(const std::filesystem::path& tool_path_stl);
+	void set_stress_in_cut(const std::filesystem::path& tool_path_stl, const std::filesystem::path& deformed_mesh);
 	void print_summary() const;
 
 	inline const std::vector<std::shared_ptr<Node>>& get_nodes() const { return nodes; }

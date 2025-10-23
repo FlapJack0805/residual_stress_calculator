@@ -1,4 +1,5 @@
 #include "mesh_handler.hpp"
+#include "fea_solver.hpp"
 
 
 
@@ -57,8 +58,8 @@ MeshHandler::MeshHandler(const std::filesystem::path& mesh_stl, const std::files
          vit != triangulation.finite_vertices_end(); ++vit, ++node_id)
     {
         Point p = vit->point().point();
-        UnitVector n = {0, 0, 1}; // placeholder (you can compute vertex normal later)
-        auto node = std::make_shared<Node>(Vertex_descriptor(), p, n);
+        MyVector n = {0, 0, 1}; // placeholder (you can compute vertex normal later)
+        auto node = std::make_shared<Node>(vit, p, n);
         nodes.push_back(node);
 
         // --- Classify boundary membership ---
@@ -107,6 +108,85 @@ void MeshHandler::set_tool_path(const std::filesystem::path& tool_path_stl)
             node->status = NodeStatus::FORCE_NODE;
         }
     }
+}
+
+
+static double intersection_volume(const C3t3& c3,
+                           const Surface_mesh& shell)
+{
+    // 1. Build an AABB tree and a point-inside tester on the shell
+    using Primitive = CGAL::AABB_face_graph_triangle_primitive<Surface_mesh>;
+    using Traits    = CGAL::AABB_traits_3<Kernel, Primitive>;
+    using Tree      = CGAL::AABB_tree<Traits>;
+
+	CGAL::AABB_tree<CGAL::AABB_traits_3<Kernel, CGAL::AABB_face_graph_triangle_primitive<Surface_mesh>>> 
+	tree(faces(shell).begin(), faces(shell).end(), shell);
+	// Construct side tester
+	CGAL::Side_of_triangle_mesh<Surface_mesh, Kernel> inside_test(tree);
+
+    // 2. Sweep all cells in the complex and accumulate volume
+    Kernel::FT vol = 0;
+    for(const auto& cell : c3.cells_in_complex())
+    {
+        // barycenter of the tet
+        const Kernel::Point_3& p0 = cell->vertex(0)->point().point();
+        const Kernel::Point_3& p1 = cell->vertex(1)->point().point();
+        const Kernel::Point_3& p2 = cell->vertex(2)->point().point();
+        const Kernel::Point_3& p3 = cell->vertex(3)->point().point();
+        Kernel::Point_3 bary(
+            CGAL::centroid(p0, p1, p2, p3));
+
+        if( inside_test(bary) == CGAL::ON_BOUNDED_SIDE )
+            vol += CGAL::volume(p0, p1, p2, p3);
+    }
+    return CGAL::to_double(vol);     // intersection volume
+}
+
+
+static double objective_func(const std::vector<double>& x, std::vector<double>& grad, void* data)
+{
+    OptimizationContext* context = static_cast<OptimizationContext*>(data);
+    MeshHandler* handler = context->handler;
+    Surface_mesh* goal_mesh = context->goal_mesh;
+
+    double pressure = x[0];
+
+    FEA fea(*handler);
+    C3t3 deformed_mesh = fea.apply_trench_force(pressure);
+
+    double volume = intersection_volume(deformed_mesh, *goal_mesh);
+    std::cout << "[NLopt] pressure = " << pressure << " MPa → volume = " << volume << "\n";
+    return volume; // NLopt will maximize this
+}
+
+
+void MeshHandler::set_stress_in_cut(const std::filesystem::path& tool_path_stl, const std::filesystem::path& deformed_stl)
+{
+    set_tool_path(tool_path_stl); // sets all values in nodes vector to what we need to simulate the cut
+
+    Surface_mesh deformed_mesh;
+
+    if (!CGAL::Polygon_mesh_processing::IO::read_polygon_mesh(deformed_stl.string(), deformed_mesh)) 
+    {
+        throw std::runtime_error("Failed to load mesh: " + deformed_stl.string());
+    }
+
+    OptimizationContext context{this, &deformed_mesh};
+
+    nlopt::opt opt(nlopt::LN_COBYLA, 1);  // 1 parameter: pressure
+    opt.set_max_objective(objective_func, &context);
+    opt.set_lower_bounds(-5000.0);
+    opt.set_upper_bounds(5000.0);
+    opt.set_xtol_rel(1e-3);
+
+    std::vector<double> x = {100.0};
+    double max_volume;
+    opt.optimize(x, max_volume);
+
+    std::cout << "[Optimization] Best pressure = "
+              << x[0] << " MPa (volume = " << max_volume << ")\n";
+
+
 }
 
 
