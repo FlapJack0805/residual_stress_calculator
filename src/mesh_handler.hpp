@@ -6,6 +6,7 @@
 #include <CGAL/Orthogonal_k_neighbor_search.h>
 #include <CGAL/Surface_mesh.h>
 #include "CGAL/Polygon_mesh_processing/IO/polygon_mesh_io.h"
+#include "CGAL/Polygon_mesh_processing/clip.h"
 #include <CGAL/Polygon_mesh_processing/transform.h>
 #include "CGAL/Polygon_mesh_processing/orientation.h"
 #include "CGAL/Polygon_mesh_processing/self_intersections.h"
@@ -124,6 +125,8 @@ struct OptimizationContext
 {
     MeshHandler* handler;
     Surface_mesh* goal_mesh;
+    double goal_volume;   // precomputed once at start
+    double lambda;        // penalty strength
 };
 
 
@@ -138,6 +141,7 @@ public:
 	MeshHandler(const std::filesystem::path& mesh_stl, const std::filesystem::path& boundary_stl);
 	void set_stress_in_cut(const std::filesystem::path& tool_path_stl, const std::filesystem::path& deformed_mesh);
 	void print_summary() const;
+	void export_surface_mesh(const std::filesystem::path& out_path) const;
 
 	inline const std::vector<std::shared_ptr<Node>>& get_nodes() const { return nodes; }
 	inline std::shared_ptr<Node> get_node(size_t id) { return nodes.at(id); }

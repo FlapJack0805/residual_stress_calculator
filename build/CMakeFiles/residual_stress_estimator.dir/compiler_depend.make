@@ -690,8 +690,10 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o: /home/jstifter/co
   /usr/include/CGAL/Polygon_mesh_processing/IO/polygon_mesh_io.h \
   /usr/include/CGAL/Polygon_mesh_processing/Non_manifold_feature_map.h \
   /usr/include/CGAL/Polygon_mesh_processing/Uniform_sizing_field.h \
+  /usr/include/CGAL/Polygon_mesh_processing/angle_and_area_smoothing.h \
   /usr/include/CGAL/Polygon_mesh_processing/bbox.h \
   /usr/include/CGAL/Polygon_mesh_processing/border.h \
+  /usr/include/CGAL/Polygon_mesh_processing/clip.h \
   /usr/include/CGAL/Polygon_mesh_processing/compute_normal.h \
   /usr/include/CGAL/Polygon_mesh_processing/connected_components.h \
   /usr/include/CGAL/Polygon_mesh_processing/corefinement.h \
@@ -700,6 +702,7 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o: /home/jstifter/co
   /usr/include/CGAL/Polygon_mesh_processing/fair.h \
   /usr/include/CGAL/Polygon_mesh_processing/internal/AABB_traversal_traits_with_Hausdorff_distance.h \
   /usr/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Face_graph_output_builder.h \
+  /usr/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Generic_clip_output_builder.h \
   /usr/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Intersection_type.h \
   /usr/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Output_builder_for_autorefinement.h \
   /usr/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Visitor.h \
@@ -716,18 +719,23 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o: /home/jstifter/co
   /usr/include/CGAL/Polygon_mesh_processing/internal/Side_of_triangle_mesh/Point_inside_vertical_ray_cast.h \
   /usr/include/CGAL/Polygon_mesh_processing/internal/Side_of_triangle_mesh/Ray_3_Triangle_3_traversal_traits.h \
   /usr/include/CGAL/Polygon_mesh_processing/internal/Sizing_field_base.h \
+  /usr/include/CGAL/Polygon_mesh_processing/internal/Smoothing/mesh_smoothing_impl.h \
+  /usr/include/CGAL/Polygon_mesh_processing/internal/Smoothing/smoothing_evaluation.h \
   /usr/include/CGAL/Polygon_mesh_processing/internal/fair_impl.h \
   /usr/include/CGAL/Polygon_mesh_processing/internal/mesh_to_point_set_hausdorff_distance.h \
   /usr/include/CGAL/Polygon_mesh_processing/internal/refine_impl.h \
   /usr/include/CGAL/Polygon_mesh_processing/intersection.h \
+  /usr/include/CGAL/Polygon_mesh_processing/manifoldness.h \
   /usr/include/CGAL/Polygon_mesh_processing/measure.h \
   /usr/include/CGAL/Polygon_mesh_processing/orient_polygon_soup.h \
   /usr/include/CGAL/Polygon_mesh_processing/orientation.h \
   /usr/include/CGAL/Polygon_mesh_processing/polygon_soup_to_polygon_mesh.h \
   /usr/include/CGAL/Polygon_mesh_processing/refine.h \
   /usr/include/CGAL/Polygon_mesh_processing/remesh.h \
+  /usr/include/CGAL/Polygon_mesh_processing/repair.h \
   /usr/include/CGAL/Polygon_mesh_processing/repair_degeneracies.h \
   /usr/include/CGAL/Polygon_mesh_processing/repair_polygon_soup.h \
+  /usr/include/CGAL/Polygon_mesh_processing/repair_self_intersections.h \
   /usr/include/CGAL/Polygon_mesh_processing/self_intersections.h \
   /usr/include/CGAL/Polygon_mesh_processing/shape_predicates.h \
   /usr/include/CGAL/Polygon_mesh_processing/stitch_borders.h \
@@ -735,6 +743,7 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o: /home/jstifter/co
   /usr/include/CGAL/Polygon_mesh_processing/transform.h \
   /usr/include/CGAL/Polygon_mesh_processing/triangulate_faces.h \
   /usr/include/CGAL/Polygon_mesh_processing/triangulate_hole.h \
+  /usr/include/CGAL/Polyhedral_envelope.h \
   /usr/include/CGAL/Polyhedral_mesh_domain_3.h \
   /usr/include/CGAL/Polyhedral_mesh_domain_with_features_3.h \
   /usr/include/CGAL/Polyhedron_3.h \
@@ -996,6 +1005,7 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o: /home/jstifter/co
   /usr/include/CGAL/license/Point_set_processing_3.h \
   /usr/include/CGAL/license/Polygon_mesh_processing.h \
   /usr/include/CGAL/license/Polygon_mesh_processing/Compute_normal.h \
+  /usr/include/CGAL/license/Polygon_mesh_processing/Polyhedral_envelope.h \
   /usr/include/CGAL/license/Polygon_mesh_processing/combinatorial_repair.h \
   /usr/include/CGAL/license/Polygon_mesh_processing/connected_components.h \
   /usr/include/CGAL/license/Polygon_mesh_processing/core.h \
@@ -3496,6 +3506,8 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o: /home/jstifter/co
   /usr/include/locale.h \
   /usr/include/math.h \
   /usr/include/mpfr.h \
+  /usr/include/nlopt.h \
+  /usr/include/nlopt.hpp \
   /usr/include/pthread.h \
   /usr/include/sched.h \
   /usr/include/stdc-predef.h \
@@ -3838,6 +3850,7 @@ CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o: /home/jstifter/code/res
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h
 
 CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o: /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/mesh_handler.cpp \
+  /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/fea_solver.hpp \
   /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/mesh_handler.hpp \
   /usr/include/CGAL/AABB_face_graph_triangle_primitive.h \
   /usr/include/CGAL/AABB_primitive.h \
@@ -4525,8 +4538,10 @@ CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o: /home/jstifter/
   /usr/include/CGAL/Polygon_mesh_processing/IO/polygon_mesh_io.h \
   /usr/include/CGAL/Polygon_mesh_processing/Non_manifold_feature_map.h \
   /usr/include/CGAL/Polygon_mesh_processing/Uniform_sizing_field.h \
+  /usr/include/CGAL/Polygon_mesh_processing/angle_and_area_smoothing.h \
   /usr/include/CGAL/Polygon_mesh_processing/bbox.h \
   /usr/include/CGAL/Polygon_mesh_processing/border.h \
+  /usr/include/CGAL/Polygon_mesh_processing/clip.h \
   /usr/include/CGAL/Polygon_mesh_processing/compute_normal.h \
   /usr/include/CGAL/Polygon_mesh_processing/connected_components.h \
   /usr/include/CGAL/Polygon_mesh_processing/corefinement.h \
@@ -4535,6 +4550,7 @@ CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o: /home/jstifter/
   /usr/include/CGAL/Polygon_mesh_processing/fair.h \
   /usr/include/CGAL/Polygon_mesh_processing/internal/AABB_traversal_traits_with_Hausdorff_distance.h \
   /usr/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Face_graph_output_builder.h \
+  /usr/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Generic_clip_output_builder.h \
   /usr/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Intersection_type.h \
   /usr/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Output_builder_for_autorefinement.h \
   /usr/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Visitor.h \
@@ -4551,18 +4567,23 @@ CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o: /home/jstifter/
   /usr/include/CGAL/Polygon_mesh_processing/internal/Side_of_triangle_mesh/Point_inside_vertical_ray_cast.h \
   /usr/include/CGAL/Polygon_mesh_processing/internal/Side_of_triangle_mesh/Ray_3_Triangle_3_traversal_traits.h \
   /usr/include/CGAL/Polygon_mesh_processing/internal/Sizing_field_base.h \
+  /usr/include/CGAL/Polygon_mesh_processing/internal/Smoothing/mesh_smoothing_impl.h \
+  /usr/include/CGAL/Polygon_mesh_processing/internal/Smoothing/smoothing_evaluation.h \
   /usr/include/CGAL/Polygon_mesh_processing/internal/fair_impl.h \
   /usr/include/CGAL/Polygon_mesh_processing/internal/mesh_to_point_set_hausdorff_distance.h \
   /usr/include/CGAL/Polygon_mesh_processing/internal/refine_impl.h \
   /usr/include/CGAL/Polygon_mesh_processing/intersection.h \
+  /usr/include/CGAL/Polygon_mesh_processing/manifoldness.h \
   /usr/include/CGAL/Polygon_mesh_processing/measure.h \
   /usr/include/CGAL/Polygon_mesh_processing/orient_polygon_soup.h \
   /usr/include/CGAL/Polygon_mesh_processing/orientation.h \
   /usr/include/CGAL/Polygon_mesh_processing/polygon_soup_to_polygon_mesh.h \
   /usr/include/CGAL/Polygon_mesh_processing/refine.h \
   /usr/include/CGAL/Polygon_mesh_processing/remesh.h \
+  /usr/include/CGAL/Polygon_mesh_processing/repair.h \
   /usr/include/CGAL/Polygon_mesh_processing/repair_degeneracies.h \
   /usr/include/CGAL/Polygon_mesh_processing/repair_polygon_soup.h \
+  /usr/include/CGAL/Polygon_mesh_processing/repair_self_intersections.h \
   /usr/include/CGAL/Polygon_mesh_processing/self_intersections.h \
   /usr/include/CGAL/Polygon_mesh_processing/shape_predicates.h \
   /usr/include/CGAL/Polygon_mesh_processing/stitch_borders.h \
@@ -4570,6 +4591,7 @@ CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o: /home/jstifter/
   /usr/include/CGAL/Polygon_mesh_processing/transform.h \
   /usr/include/CGAL/Polygon_mesh_processing/triangulate_faces.h \
   /usr/include/CGAL/Polygon_mesh_processing/triangulate_hole.h \
+  /usr/include/CGAL/Polyhedral_envelope.h \
   /usr/include/CGAL/Polyhedral_mesh_domain_3.h \
   /usr/include/CGAL/Polyhedral_mesh_domain_with_features_3.h \
   /usr/include/CGAL/Polyhedron_3.h \
@@ -4831,6 +4853,7 @@ CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o: /home/jstifter/
   /usr/include/CGAL/license/Point_set_processing_3.h \
   /usr/include/CGAL/license/Polygon_mesh_processing.h \
   /usr/include/CGAL/license/Polygon_mesh_processing/Compute_normal.h \
+  /usr/include/CGAL/license/Polygon_mesh_processing/Polyhedral_envelope.h \
   /usr/include/CGAL/license/Polygon_mesh_processing/combinatorial_repair.h \
   /usr/include/CGAL/license/Polygon_mesh_processing/connected_components.h \
   /usr/include/CGAL/license/Polygon_mesh_processing/core.h \
@@ -7331,6 +7354,8 @@ CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o: /home/jstifter/
   /usr/include/locale.h \
   /usr/include/math.h \
   /usr/include/mpfr.h \
+  /usr/include/nlopt.h \
+  /usr/include/nlopt.hpp \
   /usr/include/pthread.h \
   /usr/include/sched.h \
   /usr/include/stdc-predef.h \
@@ -7670,6 +7695,8 @@ CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o:
 /usr/include/stdio.h:
 
 /usr/include/stdint.h:
+
+/usr/include/nlopt.hpp:
 
 /usr/include/mpfr.h:
 
@@ -8453,8 +8480,6 @@ CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o:
 
 /usr/include/boost/preprocessor/tuple/reverse.hpp:
 
-/usr/include/boost/preprocessor/tuple/replace.hpp:
-
 /usr/include/boost/preprocessor/tuple/rem.hpp:
 
 /usr/include/boost/preprocessor/tuple/push_front.hpp:
@@ -9113,8 +9138,6 @@ CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o:
 
 /usr/include/boost/multiprecision/number.hpp:
 
-/usr/include/boost/multiprecision/integer.hpp:
-
 /usr/include/boost/multiprecision/fwd.hpp:
 
 /usr/include/boost/multiprecision/detail/string_helpers.hpp:
@@ -9155,9 +9178,21 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 
 /usr/include/boost/multiprecision/detail/et_ops.hpp:
 
-/usr/include/CGAL/Intersections_3/Point_3_Tetrahedron_3.h:
+/usr/include/boost/multiprecision/detail/empty_value.hpp:
 
-/usr/include/bits/iscanonical.h:
+/usr/include/boost/multiprecision/detail/digits.hpp:
+
+/usr/include/boost/multiprecision/detail/default_ops.hpp:
+
+/usr/include/boost/multiprecision/detail/bitscan.hpp:
+
+/usr/include/boost/type_traits/declval.hpp:
+
+/usr/include/boost/multiprecision/detail/atomic.hpp:
+
+/usr/include/boost/multiprecision/detail/assert.hpp:
+
+/usr/include/boost/multiprecision/debug_adaptor.hpp:
 
 /usr/include/bits/floatn-common.h:
 
@@ -9463,6 +9498,12 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 
 /usr/include/CGAL/Cartesian/ft_constructions_3.h:
 
+/usr/include/boost/predef/hardware/simd/ppc.h:
+
+/usr/include/boost/multiprecision/detail/check_cpp11_config.hpp:
+
+/usr/include/CGAL/mutex.h:
+
 /usr/include/bits/unistd_ext.h:
 
 /usr/include/c++/15.1.1/memory:
@@ -9643,15 +9684,9 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 
 /usr/include/boost/mpl/iter_fold.hpp:
 
-/usr/include/CGAL/license/AABB_tree.h:
-
 /usr/include/CGAL/Side_of_triangle_mesh.h:
 
 /usr/include/boost/mpl/aux_/config/msvc_typename.hpp:
-
-/usr/include/boost/type_traits/declval.hpp:
-
-/usr/include/boost/multiprecision/detail/atomic.hpp:
 
 /usr/include/CGAL/Segment_3.h:
 
@@ -9662,6 +9697,8 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 /usr/include/CGAL/license/lgpl.h:
 
 /usr/include/CGAL/Tetrahedron_3.h:
+
+/usr/include/CGAL/license/Polygon_mesh_processing/Polyhedral_envelope.h:
 
 /usr/include/CGAL/Filtered_kernel/Cartesian_coordinate_iterator_3.h:
 
@@ -9797,6 +9834,12 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 
 /usr/include/CGAL/boost/graph/split_graph_into_polylines.h:
 
+/usr/include/CGAL/license/AABB_tree.h:
+
+/usr/include/CGAL/Polygon_mesh_processing/repair.h:
+
+/usr/include/boost/mpl/aux_/config/bcc.hpp:
+
 /usr/include/CGAL/use.h:
 
 /usr/include/CGAL/Polygon_mesh_processing/orientation.h:
@@ -9814,6 +9857,12 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 /usr/include/boost/variant/detail/apply_visitor_delayed.hpp:
 
 /usr/include/CGAL/STL_Extension/internal/parameters_interface.h:
+
+/usr/include/CGAL/Polygon_mesh_processing/internal/Smoothing/mesh_smoothing_impl.h:
+
+/usr/include/boost/predef/os/bsd/dragonfly.h:
+
+/usr/include/boost/iterator/interoperable.hpp:
 
 /usr/include/CGAL/Static_filtered_predicate.h:
 
@@ -9878,6 +9927,12 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 /usr/include/boost/type_traits/copy_cv.hpp:
 
 /usr/include/CGAL/Polygon_mesh_processing/bbox.h:
+
+/usr/include/CGAL/Gmpq.h:
+
+/usr/include/boost/preprocessor/arithmetic/detail/is_maximum_number.hpp:
+
+/usr/include/boost/mpl/aux_/has_size.hpp:
 
 /usr/include/CGAL/Polygon_mesh_processing/Non_manifold_feature_map.h:
 
@@ -9950,6 +10005,8 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 /usr/include/CGAL/Multiscale_sort.h:
 
 /usr/include/boost/mpl/aux_/joint_iter.hpp:
+
+/usr/include/boost/bimap/relation/support/get.hpp:
 
 /usr/include/boost/unordered/detail/set.hpp:
 
@@ -10087,6 +10144,16 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 
 /usr/include/CGAL/Mesh_3/Refine_facets_manifold_base.h:
 
+/usr/include/boost/preprocessor/tuple/replace.hpp:
+
+/usr/include/CGAL/Polygon_mesh_processing/manifoldness.h:
+
+/usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:
+
+/usr/include/boost/fusion/view/transform_view/detail/at_impl.hpp:
+
+/usr/include/boost/mpl/or.hpp:
+
 /usr/include/CGAL/Mesh_3/Refine_cells_3.h:
 
 /usr/include/CGAL/Intersections_3/internal/Bbox_3_Iso_cuboid_3_intersection.h:
@@ -10142,12 +10209,6 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 /usr/include/CGAL/Kernel/Type_equality_wrapper.h:
 
 /usr/include/CGAL/Triangle_3.h:
-
-/usr/include/bits/mathcalls-helper-functions.h:
-
-/usr/include/CGAL/IO/Verbose_ostream.h:
-
-/usr/include/boost/mpl/insert_range_fwd.hpp:
 
 /usr/include/CGAL/license/TDS_2.h:
 
@@ -10214,6 +10275,12 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 /usr/include/boost/mpl/aux_/config/preprocessor.hpp:
 
 /usr/include/CGAL/Iso_rectangle_2.h:
+
+/usr/include/boost/typeof/decltype.hpp:
+
+/usr/include/boost/multiprecision/detail/constexpr.hpp:
+
+/usr/include/boost/fusion/container/vector/vector_iterator.hpp:
 
 /usr/include/CGAL/Search_traits_adapter.h:
 
@@ -10473,6 +10540,10 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 
 /usr/include/boost/bimap/container_adaptor/detail/functor_bag.hpp:
 
+/usr/include/boost/multiprecision/integer.hpp:
+
+/usr/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Generic_clip_output_builder.h:
+
 /usr/include/boost/callable_traits/detail/unguarded/pmf_3.hpp:
 
 /usr/include/CGAL/exceptions.h:
@@ -10518,6 +10589,8 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 /usr/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Visitor.h:
 
 /usr/include/CGAL/Distance_3/Segment_3_Line_3.h:
+
+/usr/include/CGAL/Intersections_3/Point_3_Tetrahedron_3.h:
 
 /usr/include/CGAL/basic_classes.h:
 
@@ -10568,12 +10641,6 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 /usr/include/CGAL/Intersections_3/internal/Ray_3_Tetrahedron_3_intersection.h:
 
 /usr/include/boost/mpl/front.hpp:
-
-/usr/include/CGAL/Gmpq.h:
-
-/usr/include/boost/preprocessor/arithmetic/detail/is_maximum_number.hpp:
-
-/usr/include/boost/mpl/aux_/has_size.hpp:
 
 /usr/include/boost/smart_ptr/detail/deprecated_macros.hpp:
 
@@ -10782,6 +10849,10 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 /usr/include/CGAL/Homogeneous/DirectionH2.h:
 
 /usr/include/boost/mp11/detail/mp_count.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/bind_fwd.hpp:
+
+/usr/include/CGAL/Cartesian/Scaling_rep_2.h:
 
 /usr/include/CGAL/Intersections_3/Sphere_3_Tetrahedron_3.h:
 
@@ -11084,10 +11155,6 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 /usr/include/CGAL/IO/OI.h:
 
 /usr/include/boost/math/tools/series.hpp:
-
-/usr/include/bits/math-vector.h:
-
-/usr/include/boost/bimap/support/iterator_type_by.hpp:
 
 /usr/include/CGAL/GMP_arithmetic_kernel.h:
 
@@ -11475,10 +11542,6 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 
 /usr/include/CGAL/Cartesian/Segment_3.h:
 
-/usr/include/bits/long-double.h:
-
-/usr/include/boost/intrusive/detail/workaround.hpp:
-
 /usr/include/CGAL/Distance_2/Segment_2_Line_2.h:
 
 /usr/include/CGAL/Homogeneous/function_objects.h:
@@ -11703,12 +11766,6 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 
 /usr/include/CGAL/Homogeneous/Aff_transformationH3.h:
 
-/usr/include/bits/libm-simd-decl-stubs.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512fp16vlintrin.h:
-
-/usr/include/CGAL/Intersections_3/internal/Bbox_3_Line_3_intersection.h:
-
 /usr/include/CGAL/Triangulation_hierarchy_vertex_base_3.h:
 
 /usr/include/boost/bind/detail/integer_sequence.hpp:
@@ -11912,6 +11969,12 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 /usr/include/CGAL/Intersections_3/internal/Line_3_Ray_3_intersection.h:
 
 /usr/include/CGAL/IO/VTK.h:
+
+/usr/include/CGAL/IO/Verbose_ostream.h:
+
+/usr/include/bits/mathcalls-helper-functions.h:
+
+/usr/include/boost/mpl/insert_range_fwd.hpp:
 
 /usr/include/boost/preprocessor/inc.hpp:
 
@@ -12237,6 +12300,12 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 
 /usr/include/boost/multiprecision/cpp_int/intel_intrinsics.hpp:
 
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512fp16vlintrin.h:
+
+/usr/include/CGAL/Intersections_3/internal/Bbox_3_Line_3_intersection.h:
+
+/usr/include/bits/libm-simd-decl-stubs.h:
+
 /usr/include/CGAL/Intersections_3/internal/Bbox_3_Ray_3_do_intersect.h:
 
 /usr/include/boost/mpl/aux_/lambda_support.hpp:
@@ -12280,6 +12349,8 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 /usr/include/CGAL/Intersections_3/internal/Iso_cuboid_3_Triangle_3_do_intersect.h:
 
 /usr/include/boost/bimap/detail/generate_view_binder.hpp:
+
+/usr/include/CGAL/Polygon_mesh_processing/internal/Smoothing/smoothing_evaluation.h:
 
 /usr/include/CGAL/STL_Extension/internal/mesh_parameters_interface.h:
 
@@ -12425,6 +12496,16 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 
 /usr/include/CGAL/boost/graph/properties_Polyhedron_3_features.h:
 
+/usr/include/bits/iscanonical.h:
+
+/usr/include/bits/long-double.h:
+
+/usr/include/boost/intrusive/detail/workaround.hpp:
+
+/usr/include/bits/math-vector.h:
+
+/usr/include/boost/bimap/support/iterator_type_by.hpp:
+
 /usr/include/c++/15.1.1/new:
 
 /usr/include/bits/mathcalls.h:
@@ -12521,6 +12602,8 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 
 /usr/include/boost/detail/reference_content.hpp:
 
+/usr/include/CGAL/Polygon_mesh_processing/angle_and_area_smoothing.h:
+
 /usr/include/bits/types/struct_timeval.h:
 
 /usr/include/CGAL/Meshes/Triangulation_mesher_level_traits_3.h:
@@ -12596,8 +12679,6 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 /usr/include/CGAL/boost/graph/graph_traits_HalfedgeDS_default.h:
 
 /usr/include/boost/callable_traits/detail/unguarded/function_ptr.hpp:
-
-/usr/include/boost/multiprecision/detail/empty_value.hpp:
 
 /usr/include/boost/bimap/container_adaptor/set_adaptor.hpp:
 
@@ -12694,8 +12775,6 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 /usr/include/boost/math/special_functions/trunc.hpp:
 
 /usr/include/boost/bimap/relation/support/data_extractor.hpp:
-
-/usr/include/boost/bimap/relation/support/get.hpp:
 
 /usr/include/boost/bimap/relation/support/is_tag_of_member_at.hpp:
 
@@ -12941,9 +13020,9 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 
 /usr/include/boost/config/detail/posix_features.hpp:
 
-/usr/include/bits/local_lim.h:
-
 /usr/include/boost/math/special_functions/detail/bernoulli_details.hpp:
+
+/usr/include/bits/local_lim.h:
 
 /usr/include/boost/config/detail/select_compiler_config.hpp:
 
@@ -13005,6 +13084,8 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 
 /usr/include/boost/mpl/vector/aux_/include_preprocessed.hpp:
 
+/usr/include/CGAL/Polyhedral_envelope.h:
+
 /usr/include/boost/container/detail/algorithm.hpp:
 
 /usr/include/boost/mpl/empty.hpp:
@@ -13062,8 +13143,6 @@ CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o:
 /usr/include/boost/mpl/advance_fwd.hpp:
 
 /usr/include/boost/container/detail/placement_new.hpp:
-
-/usr/include/boost/multiprecision/detail/bitscan.hpp:
 
 /usr/include/boost/container/detail/std_fwd.hpp:
 
@@ -13443,12 +13522,6 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o:
 
 /usr/include/boost/fusion/container/vector/detail/next_impl.hpp:
 
-/usr/include/boost/typeof/decltype.hpp:
-
-/usr/include/boost/fusion/container/vector/vector_iterator.hpp:
-
-/usr/include/boost/multiprecision/detail/constexpr.hpp:
-
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/popcntintrin.h:
 
 /usr/include/boost/fusion/container/vector/detail/value_of_impl.hpp:
@@ -13713,12 +13786,6 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o:
 
 /usr/include/boost/fusion/view/single_view/single_view.hpp:
 
-/usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:
-
-/usr/include/boost/fusion/view/transform_view/detail/at_impl.hpp:
-
-/usr/include/boost/mpl/or.hpp:
-
 /usr/include/boost/fusion/view/transform_view/detail/begin_impl.hpp:
 
 /usr/include/boost/fusion/view/transform_view/detail/deref_data_impl.hpp:
@@ -13914,10 +13981,6 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o:
 /usr/include/boost/core/detail/sp_thread_sleep.hpp:
 
 /usr/include/boost/mpl/set/aux_/clear_impl.hpp:
-
-/usr/include/boost/predef/os/bsd/dragonfly.h:
-
-/usr/include/boost/iterator/interoperable.hpp:
 
 /usr/include/boost/iterator/iterator_concepts.hpp:
 
@@ -14287,8 +14350,6 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o:
 
 /usr/include/boost/mpl/aux_/begin_end_impl.hpp:
 
-/usr/include/boost/mpl/aux_/config/bcc.hpp:
-
 /usr/include/boost/fusion/iterator/value_of_data.hpp:
 
 /usr/include/boost/mpl/aux_/config/bind.hpp:
@@ -14401,10 +14462,6 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/apply_fwd.hpp:
 
-/usr/include/CGAL/Cartesian/Scaling_rep_2.h:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/bind_fwd.hpp:
-
 /usr/include/boost/mpl/aux_/preprocessed/gcc/equal_to.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/fold_impl.hpp:
@@ -14481,9 +14538,9 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o:
 
 /usr/include/boost/mpl/bool.hpp:
 
-/usr/include/CGAL/Intersections_2/Circle_2_Circle_2.h:
-
 /usr/include/CGAL/Polygon_mesh_processing/triangulate_hole.h:
+
+/usr/include/CGAL/Intersections_2/Circle_2_Circle_2.h:
 
 /usr/include/boost/mpl/clear.hpp:
 
@@ -14663,6 +14720,8 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o:
 
 /usr/include/boost/mpl/size_t_fwd.hpp:
 
+/usr/include/CGAL/Polygon_mesh_processing/repair_self_intersections.h:
+
 /usr/include/boost/fusion/sequence/comparison/detail/equal_to.hpp:
 
 /usr/include/boost/mpl/transform.hpp:
@@ -14676,6 +14735,8 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o:
 /usr/include/boost/mpl/vector/aux_/at.hpp:
 
 /usr/include/boost/mpl/vector/aux_/begin_end.hpp:
+
+/usr/include/CGAL/Polygon_mesh_processing/clip.h:
 
 /usr/include/boost/mpl/vector/aux_/front.hpp:
 
@@ -14724,6 +14785,8 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o:
 /usr/include/c++/15.1.1/bits/allocator.h:
 
 /usr/include/boost/multi_index/detail/hash_index_iterator.hpp:
+
+/usr/include/nlopt.h:
 
 /usr/include/boost/multi_index/detail/value_compare.hpp:
 
@@ -14818,17 +14881,3 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o:
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512ifmavlintrin.h:
 
 /usr/include/boost/multiprecision/cpp_int/multiply.hpp:
-
-/usr/include/boost/multiprecision/debug_adaptor.hpp:
-
-/usr/include/boost/multiprecision/detail/assert.hpp:
-
-/usr/include/boost/predef/hardware/simd/ppc.h:
-
-/usr/include/CGAL/mutex.h:
-
-/usr/include/boost/multiprecision/detail/check_cpp11_config.hpp:
-
-/usr/include/boost/multiprecision/detail/default_ops.hpp:
-
-/usr/include/boost/multiprecision/detail/digits.hpp:

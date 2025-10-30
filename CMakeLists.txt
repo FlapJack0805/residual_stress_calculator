@@ -20,6 +20,9 @@ FetchContent_MakeAvailable(CLI11)
 
 # CGAL (system-installed)
 find_package(CGAL REQUIRED)
+find_package(NLopt REQUIRED)
+find_package(GMP REQUIRED)
+find_package(MPFR REQUIRED)
 
 # NLOPT (system-installed)
 find_library(NLOPT_LIB nlopt REQUIRED)
@@ -60,12 +63,28 @@ target_link_libraries(residual_stress_estimator
         mpfr
 )
 
+
 # -----------------------------
-# Unit test executable
+# Unit test executables
 # -----------------------------
 add_executable(mesh_handler_tester
     ${SRC_FILES}
     src/mesh_handler_tester.cpp
+)
+
+add_executable(set_stress_test
+    ${SRC_FILES}
+    src/set_stress_test.cpp
+)
+
+
+target_link_libraries(set_stress_test
+    PRIVATE
+        CLI11::CLI11
+        CGAL::CGAL
+        ${NLOPT_LIB}
+        gmp
+        mpfr
 )
 
 target_link_libraries(mesh_handler_tester
@@ -78,7 +97,7 @@ target_link_libraries(mesh_handler_tester
 )
 
 # Optional: organize binaries in bin/
-set_target_properties(residual_stress_estimator mesh_handler_tester
+set_target_properties(residual_stress_estimator mesh_handler_tester set_stress_test
     PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
 )

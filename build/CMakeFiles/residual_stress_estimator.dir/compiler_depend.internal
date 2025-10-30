@@ -691,8 +691,10 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o
  /usr/include/CGAL/Polygon_mesh_processing/IO/polygon_mesh_io.h
  /usr/include/CGAL/Polygon_mesh_processing/Non_manifold_feature_map.h
  /usr/include/CGAL/Polygon_mesh_processing/Uniform_sizing_field.h
+ /usr/include/CGAL/Polygon_mesh_processing/angle_and_area_smoothing.h
  /usr/include/CGAL/Polygon_mesh_processing/bbox.h
  /usr/include/CGAL/Polygon_mesh_processing/border.h
+ /usr/include/CGAL/Polygon_mesh_processing/clip.h
  /usr/include/CGAL/Polygon_mesh_processing/compute_normal.h
  /usr/include/CGAL/Polygon_mesh_processing/connected_components.h
  /usr/include/CGAL/Polygon_mesh_processing/corefinement.h
@@ -701,6 +703,7 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o
  /usr/include/CGAL/Polygon_mesh_processing/fair.h
  /usr/include/CGAL/Polygon_mesh_processing/internal/AABB_traversal_traits_with_Hausdorff_distance.h
  /usr/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Face_graph_output_builder.h
+ /usr/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Generic_clip_output_builder.h
  /usr/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Intersection_type.h
  /usr/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Output_builder_for_autorefinement.h
  /usr/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Visitor.h
@@ -717,18 +720,23 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o
  /usr/include/CGAL/Polygon_mesh_processing/internal/Side_of_triangle_mesh/Point_inside_vertical_ray_cast.h
  /usr/include/CGAL/Polygon_mesh_processing/internal/Side_of_triangle_mesh/Ray_3_Triangle_3_traversal_traits.h
  /usr/include/CGAL/Polygon_mesh_processing/internal/Sizing_field_base.h
+ /usr/include/CGAL/Polygon_mesh_processing/internal/Smoothing/mesh_smoothing_impl.h
+ /usr/include/CGAL/Polygon_mesh_processing/internal/Smoothing/smoothing_evaluation.h
  /usr/include/CGAL/Polygon_mesh_processing/internal/fair_impl.h
  /usr/include/CGAL/Polygon_mesh_processing/internal/mesh_to_point_set_hausdorff_distance.h
  /usr/include/CGAL/Polygon_mesh_processing/internal/refine_impl.h
  /usr/include/CGAL/Polygon_mesh_processing/intersection.h
+ /usr/include/CGAL/Polygon_mesh_processing/manifoldness.h
  /usr/include/CGAL/Polygon_mesh_processing/measure.h
  /usr/include/CGAL/Polygon_mesh_processing/orient_polygon_soup.h
  /usr/include/CGAL/Polygon_mesh_processing/orientation.h
  /usr/include/CGAL/Polygon_mesh_processing/polygon_soup_to_polygon_mesh.h
  /usr/include/CGAL/Polygon_mesh_processing/refine.h
  /usr/include/CGAL/Polygon_mesh_processing/remesh.h
+ /usr/include/CGAL/Polygon_mesh_processing/repair.h
  /usr/include/CGAL/Polygon_mesh_processing/repair_degeneracies.h
  /usr/include/CGAL/Polygon_mesh_processing/repair_polygon_soup.h
+ /usr/include/CGAL/Polygon_mesh_processing/repair_self_intersections.h
  /usr/include/CGAL/Polygon_mesh_processing/self_intersections.h
  /usr/include/CGAL/Polygon_mesh_processing/shape_predicates.h
  /usr/include/CGAL/Polygon_mesh_processing/stitch_borders.h
@@ -736,6 +744,7 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o
  /usr/include/CGAL/Polygon_mesh_processing/transform.h
  /usr/include/CGAL/Polygon_mesh_processing/triangulate_faces.h
  /usr/include/CGAL/Polygon_mesh_processing/triangulate_hole.h
+ /usr/include/CGAL/Polyhedral_envelope.h
  /usr/include/CGAL/Polyhedral_mesh_domain_3.h
  /usr/include/CGAL/Polyhedral_mesh_domain_with_features_3.h
  /usr/include/CGAL/Polyhedron_3.h
@@ -997,6 +1006,7 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o
  /usr/include/CGAL/license/Point_set_processing_3.h
  /usr/include/CGAL/license/Polygon_mesh_processing.h
  /usr/include/CGAL/license/Polygon_mesh_processing/Compute_normal.h
+ /usr/include/CGAL/license/Polygon_mesh_processing/Polyhedral_envelope.h
  /usr/include/CGAL/license/Polygon_mesh_processing/combinatorial_repair.h
  /usr/include/CGAL/license/Polygon_mesh_processing/connected_components.h
  /usr/include/CGAL/license/Polygon_mesh_processing/core.h
@@ -3497,6 +3507,8 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o
  /usr/include/locale.h
  /usr/include/math.h
  /usr/include/mpfr.h
+ /usr/include/nlopt.h
+ /usr/include/nlopt.hpp
  /usr/include/pthread.h
  /usr/include/sched.h
  /usr/include/stdc-predef.h
@@ -3841,6 +3853,7 @@ CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o
 
 CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o
  /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/mesh_handler.cpp
+ /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/fea_solver.hpp
  /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/mesh_handler.hpp
  /usr/include/CGAL/AABB_face_graph_triangle_primitive.h
  /usr/include/CGAL/AABB_primitive.h
@@ -4528,8 +4541,10 @@ CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o
  /usr/include/CGAL/Polygon_mesh_processing/IO/polygon_mesh_io.h
  /usr/include/CGAL/Polygon_mesh_processing/Non_manifold_feature_map.h
  /usr/include/CGAL/Polygon_mesh_processing/Uniform_sizing_field.h
+ /usr/include/CGAL/Polygon_mesh_processing/angle_and_area_smoothing.h
  /usr/include/CGAL/Polygon_mesh_processing/bbox.h
  /usr/include/CGAL/Polygon_mesh_processing/border.h
+ /usr/include/CGAL/Polygon_mesh_processing/clip.h
  /usr/include/CGAL/Polygon_mesh_processing/compute_normal.h
  /usr/include/CGAL/Polygon_mesh_processing/connected_components.h
  /usr/include/CGAL/Polygon_mesh_processing/corefinement.h
@@ -4538,6 +4553,7 @@ CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o
  /usr/include/CGAL/Polygon_mesh_processing/fair.h
  /usr/include/CGAL/Polygon_mesh_processing/internal/AABB_traversal_traits_with_Hausdorff_distance.h
  /usr/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Face_graph_output_builder.h
+ /usr/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Generic_clip_output_builder.h
  /usr/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Intersection_type.h
  /usr/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Output_builder_for_autorefinement.h
  /usr/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Visitor.h
@@ -4554,18 +4570,23 @@ CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o
  /usr/include/CGAL/Polygon_mesh_processing/internal/Side_of_triangle_mesh/Point_inside_vertical_ray_cast.h
  /usr/include/CGAL/Polygon_mesh_processing/internal/Side_of_triangle_mesh/Ray_3_Triangle_3_traversal_traits.h
  /usr/include/CGAL/Polygon_mesh_processing/internal/Sizing_field_base.h
+ /usr/include/CGAL/Polygon_mesh_processing/internal/Smoothing/mesh_smoothing_impl.h
+ /usr/include/CGAL/Polygon_mesh_processing/internal/Smoothing/smoothing_evaluation.h
  /usr/include/CGAL/Polygon_mesh_processing/internal/fair_impl.h
  /usr/include/CGAL/Polygon_mesh_processing/internal/mesh_to_point_set_hausdorff_distance.h
  /usr/include/CGAL/Polygon_mesh_processing/internal/refine_impl.h
  /usr/include/CGAL/Polygon_mesh_processing/intersection.h
+ /usr/include/CGAL/Polygon_mesh_processing/manifoldness.h
  /usr/include/CGAL/Polygon_mesh_processing/measure.h
  /usr/include/CGAL/Polygon_mesh_processing/orient_polygon_soup.h
  /usr/include/CGAL/Polygon_mesh_processing/orientation.h
  /usr/include/CGAL/Polygon_mesh_processing/polygon_soup_to_polygon_mesh.h
  /usr/include/CGAL/Polygon_mesh_processing/refine.h
  /usr/include/CGAL/Polygon_mesh_processing/remesh.h
+ /usr/include/CGAL/Polygon_mesh_processing/repair.h
  /usr/include/CGAL/Polygon_mesh_processing/repair_degeneracies.h
  /usr/include/CGAL/Polygon_mesh_processing/repair_polygon_soup.h
+ /usr/include/CGAL/Polygon_mesh_processing/repair_self_intersections.h
  /usr/include/CGAL/Polygon_mesh_processing/self_intersections.h
  /usr/include/CGAL/Polygon_mesh_processing/shape_predicates.h
  /usr/include/CGAL/Polygon_mesh_processing/stitch_borders.h
@@ -4573,6 +4594,7 @@ CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o
  /usr/include/CGAL/Polygon_mesh_processing/transform.h
  /usr/include/CGAL/Polygon_mesh_processing/triangulate_faces.h
  /usr/include/CGAL/Polygon_mesh_processing/triangulate_hole.h
+ /usr/include/CGAL/Polyhedral_envelope.h
  /usr/include/CGAL/Polyhedral_mesh_domain_3.h
  /usr/include/CGAL/Polyhedral_mesh_domain_with_features_3.h
  /usr/include/CGAL/Polyhedron_3.h
@@ -4834,6 +4856,7 @@ CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o
  /usr/include/CGAL/license/Point_set_processing_3.h
  /usr/include/CGAL/license/Polygon_mesh_processing.h
  /usr/include/CGAL/license/Polygon_mesh_processing/Compute_normal.h
+ /usr/include/CGAL/license/Polygon_mesh_processing/Polyhedral_envelope.h
  /usr/include/CGAL/license/Polygon_mesh_processing/combinatorial_repair.h
  /usr/include/CGAL/license/Polygon_mesh_processing/connected_components.h
  /usr/include/CGAL/license/Polygon_mesh_processing/core.h
@@ -7334,6 +7357,8 @@ CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o
  /usr/include/locale.h
  /usr/include/math.h
  /usr/include/mpfr.h
+ /usr/include/nlopt.h
+ /usr/include/nlopt.hpp
  /usr/include/pthread.h
  /usr/include/sched.h
  /usr/include/stdc-predef.h

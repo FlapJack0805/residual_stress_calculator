@@ -38,6 +38,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/lib/cmake/CGAL/FindMPFR.cmake"
   "/usr/lib/cmake/boost_headers-1.88.0/boost_headers-config-version.cmake"
   "/usr/lib/cmake/boost_headers-1.88.0/boost_headers-config.cmake"
+  "/usr/lib/cmake/nlopt/NLoptConfig.cmake"
+  "/usr/lib/cmake/nlopt/NLoptConfigVersion.cmake"
+  "/usr/lib/cmake/nlopt/NLoptLibraryDepends-release.cmake"
+  "/usr/lib/cmake/nlopt/NLoptLibraryDepends.cmake"
   "/usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in"
   "/usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp"
   "/usr/share/cmake/Modules/CMakeCXXInformation.cmake"
@@ -161,5 +165,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/residual_stress_estimator.dir/DependInfo.cmake"
   "CMakeFiles/mesh_handler_tester.dir/DependInfo.cmake"
+  "CMakeFiles/set_stress_test.dir/DependInfo.cmake"
   "_deps/cli11-build/src/CMakeFiles/CLI11.dir/DependInfo.cmake"
   )

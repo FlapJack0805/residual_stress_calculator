@@ -359,6 +359,9 @@ MPFR_LIBRARIES_DIR:FILEPATH=/lib
 //Path to a library.
 NLOPT_LIB:FILEPATH=/usr/lib/libnlopt.so
 
+//The directory containing a CMake configuration file for NLopt.
+NLopt_DIR:PATH=/usr/lib/cmake/nlopt
+
 //The directory containing a CMake configuration file for boost_headers.
 boost_headers_DIR:PATH=/usr/lib/cmake/boost_headers-1.88.0
 

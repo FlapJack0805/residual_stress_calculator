@@ -1,8 +1,28 @@
 #include "fea_solver.hpp"
 
+static bool face_compare(const FaceRef& a, const FaceRef& b)
+{
+    if (a.elem_id < b.elem_id) return true;
+    if (a.elem_id > b.elem_id) return false;
+    return a.face_id < b.face_id;
+}
 
 FEA::FEA(MeshHandler& mesh_in) : mesh(mesh_in) {}
 
+
+static double tet_quality(const Point& a, const Point& b, const Point& c, const Point& d) 
+{
+    // volume
+    double V = std::abs(CGAL::to_double(CGAL::volume(a,b,c,d)));
+    // average edge length
+    double e2 = 0; int m=0;
+    Point P[4] = {a,b,c,d};
+    for(int i=0;i<4;i++) for(int j=i+1;j<4;j++){ 
+	e2 += CGAL::to_double(CGAL::squared_distance(P[i],P[j])); ++m; 
+    }
+    double e_avg = std::sqrt(e2/m);
+    return V / (e_avg*e_avg*e_avg); // dimensionless; ~0 for slivers
+}
 
 
 /*
@@ -34,13 +54,23 @@ C3t3 FEA::apply_trench_force(double pressure)
         inp << id << ", " << p.x() << ", " << p.y() << ", " << p.z() << "\n";
     }
 
+    inp << "*NSET, NSET=ALL, GENERATE\n1, " << id-1 << ", 1\n";
+
     // -------------------------------
     // *ELEMENT block (C3D10)
     // -------------------------------
-    inp << "*ELEMENT, TYPE=C3D10, ELSET=TRENCH_ELEMS\n";
+    //inp << "*ELEMENT, TYPE=C3D10, ELSET=TRENCH_ELEMS\n";
+    //will switch to C3D10 later because it's better but C3D4 is easier to get this working first
+    inp << "*ELEMENT, TYPE=C3D4, ELSET=TRENCH_ELEMS\n";
     size_t elem_id = 1;
 
     for (auto cit = tr.finite_cells_begin(); cit != tr.finite_cells_end(); ++cit, ++elem_id) {
+
+        if (tet_quality(cit->vertex(0)->point().point(), cit->vertex(1)->point().point(), cit->vertex(2)->point().point(), cit->vertex(3)->point().point()) < 0.05)
+        {
+            continue;
+        }
+
         inp << elem_id;
         for (int i = 0; i < 4; ++i)
             inp << ", " << node_id_map.at(cit->vertex(i));
@@ -68,34 +98,71 @@ C3t3 FEA::apply_trench_force(double pressure)
     // -------------------------------
     // SURFACE SET for trench wall
     // -------------------------------
-    inp << "*SURFACE, TYPE=ELEMENT, NAME=TRENCH_FACES\n";
+    // Collect trench faces
+    std::vector<FaceRef> trench_faces;
 
-    // We'll collect faces that touch any FORCE_NODE node
-    std::unordered_set<size_t> trench_element_ids;
-    size_t face_id = 1;
     size_t elem_counter = 1;
-    for (auto cit = tr.finite_cells_begin(); cit != tr.finite_cells_end(); ++cit, ++elem_counter) {
-        bool has_force_node = false;
-        for (int i = 0; i < 4; ++i) {
-            auto vh = cit->vertex(i);
-            const auto& node = nodes[node_id_map.at(vh) - 1];
-            if (node->status == NodeStatus::FORCE_NODE)
-                has_force_node = true;
-        }
-        if (has_force_node) {
-            inp << elem_counter << ", S1\n"; // TEMP: assume S1 face
+    for (auto cit = tr.finite_cells_begin(); cit != tr.finite_cells_end(); ++cit, ++elem_counter)
+    {
+        for (int face = 0; face < 4; ++face)
+        {
+            int v0 = (face + 1) % 4;
+            int v1 = (face + 2) % 4;
+            int v2 = (face + 3) % 4;
+
+            auto vh0 = cit->vertex(v0);
+            auto vh1 = cit->vertex(v1);
+            auto vh2 = cit->vertex(v2);
+
+            const auto& n0 = nodes[node_id_map.at(vh0) - 1];
+            const auto& n1 = nodes[node_id_map.at(vh1) - 1];
+            const auto& n2 = nodes[node_id_map.at(vh2) - 1];
+
+            // trying or instead of and for a bit
+            if (n0->status == NodeStatus::FORCE_NODE ||
+                n1->status == NodeStatus::FORCE_NODE ||
+                n2->status == NodeStatus::FORCE_NODE)
+            {
+                Vector N = CGAL::cross_product(n1->position - n0->position,
+                                               n2->position - n0->position);
+
+                double ax = std::abs(N.x());
+                double ay = std::abs(N.y());
+                double az = std::abs(N.z());
+
+                // Skip horizontal faces (floor)
+                //if (az > ax && az > ay) continue;
+                //std::cout << "adding load to face" << std::endl;
+
+                trench_faces.push_back({elem_counter, face + 1});
+            }
         }
     }
 
-    // optional element set for trench layer
+    // ---- Sort faces for consistent CalculiX output ----
+    std::sort(trench_faces.begin(), trench_faces.end(), face_compare);
+
+    // ---- Write SURFACE section ----
+    inp << "*SURFACE, TYPE=ELEMENT, NAME=TRENCH_FACES\n";
+    for (auto& f : trench_faces)
+        inp << f.elem_id << ", S" << f.face_id << "\n";
+
+    // ---- LAYER1 ELSET (unique element IDs only) ----
     inp << "*ELSET, ELSET=LAYER1\n";
-    std::vector<size_t> sorted_ids(trench_element_ids.begin(), trench_element_ids.end());
-    std::sort(sorted_ids.begin(), sorted_ids.end());
+
+    std::unordered_set<size_t> unique_elems;
+    for (auto& f : trench_faces) unique_elems.insert(f.elem_id);
+
+    std::vector<size_t> elem_ids(unique_elems.begin(), unique_elems.end());
+    std::sort(elem_ids.begin(), elem_ids.end());
+
     const int per_line = 16;
-    for (size_t i = 0; i < sorted_ids.size(); i += per_line) {
-        size_t end = std::min(i + per_line, sorted_ids.size());
-        for (size_t j = i; j < end; ++j) {
-            inp << sorted_ids[j];
+    for (size_t i = 0; i < elem_ids.size(); i += per_line)
+    {
+        size_t end = std::min(i + per_line, elem_ids.size());
+        for (size_t j = i; j < end; ++j)
+        {
+            inp << elem_ids[j];
             if (j + 1 < end) inp << ", ";
         }
         inp << "\n";

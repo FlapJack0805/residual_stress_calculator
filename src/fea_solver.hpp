@@ -2,6 +2,13 @@
 
 class FEA;
 
+struct FaceRef 
+{
+	size_t elem_id;
+	int face_id;
+
+};
+
 class FEA
 {
 	//later we will likely have different materials we can work with so we will customize it here but for simplicity now I will ignore it
