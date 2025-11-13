@@ -15,6 +15,10 @@
 #include <CGAL/Polygon_mesh_processing/remesh.h>
 #include <CGAL/Mesh_triangulation_3.h>
 #include <CGAL/Mesh_complex_3_in_triangulation_3.h>
+#include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
+#include <CGAL/Triangulation_3.h>
+#include <CGAL/Tetrahedron_3.h>
+#include <CGAL/tetrahedron_soup_to_triangulation_3.h>
 
 #include <CGAL/Polyhedral_mesh_domain_with_features_3.h>
 #include <CGAL/Mesh_triangulation_3.h>               
@@ -49,6 +53,11 @@
 #include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
 #include <CGAL/Kernel/global_functions_3.h>
 #include <CGAL/perturb_mesh_3.h>   
+
+#include <CGAL/Polygon_mesh_processing/corefinement.h>
+#include <CGAL/Polygon_mesh_processing/repair.h>
+#include <CGAL/Polygon_mesh_processing/orient_polygon_soup.h>
+#include <CGAL/Polygon_mesh_processing/stitch_borders.h>
 
 #include "nlopt.hpp"
 
@@ -127,6 +136,7 @@ struct OptimizationContext
     Surface_mesh* goal_mesh;
     double goal_volume;   // precomputed once at start
     double lambda;        // penalty strength
+    C3t3 defomred_mesh;
 };
 
 
@@ -141,7 +151,6 @@ public:
 	MeshHandler(const std::filesystem::path& mesh_stl, const std::filesystem::path& boundary_stl);
 	void set_stress_in_cut(const std::filesystem::path& tool_path_stl, const std::filesystem::path& deformed_mesh);
 	void print_summary() const;
-	void export_surface_mesh(const std::filesystem::path& out_path) const;
 
 	inline const std::vector<std::shared_ptr<Node>>& get_nodes() const { return nodes; }
 	inline std::shared_ptr<Node> get_node(size_t id) { return nodes.at(id); }
@@ -149,3 +158,6 @@ public:
 	inline const C3t3& get_c3t3() const { return volume_mesh; }
 	inline C3t3& get_c3t3() { return volume_mesh; }
 };
+
+
+void export_surface_mesh(const std::filesystem::path& out_path, const C3t3 *input_mesh);

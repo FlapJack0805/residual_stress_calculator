@@ -1,7 +1,6 @@
 #include "mesh_handler.hpp"
 #include "fea_solver.hpp"
 
-
 /*
  * This is the constructor for the MeshHandler class.
  * It takes in an stl file for the material mesh and for the boundary mesh which then makes our volumetric mesh that we will use all of our computations for 
@@ -94,24 +93,44 @@ void MeshHandler::set_tool_path(const std::filesystem::path& tool_path_stl)
 
     CGAL::Side_of_triangle_mesh<Surface_mesh, Kernel> inside_test(tree);
 
+    std::ofstream out("force_nodes.csv");
+    out << "x,y,z\n";
 
     for (auto& node : nodes) 
     {
+        if (node->status == NodeStatus::CUT)
+        {
+            continue;
+        }
+
         Point p = node->position;
 
         CGAL::Bounded_side side = inside_test(p);
 
-        if (side == CGAL::ON_BOUNDED_SIDE) 
+        /*
+         * Trying a new way to pick force nodes where if you are inside of this then you are a force node because cut nodes are already cut out
+        if (side == CGAL::ON_BOUNDED_SIDE && side != CGAL::ON_BOUNDARY)
         {
             node->status = NodeStatus::CUT_NEXT;
         } 
+
         else if (side == CGAL::ON_BOUNDARY) 
         {
             if (side == CGAL::ON_BOUNDARY)
             {
                 node->status = NodeStatus::FORCE_NODE;
+                out << node->position.x() << ',' << node->position.y() << ',' << node->position.z() << '\n';
+
             }
         }
+        */
+
+        if (side == CGAL::ON_BOUNDED_SIDE || side == CGAL::ON_BOUNDARY)
+        {
+                node->status = NodeStatus::FORCE_NODE;
+                out << node->position.x() << ',' << node->position.y() << ',' << node->position.z() << '\n';
+        }
+
     }
 }
 
@@ -122,8 +141,9 @@ void MeshHandler::set_tool_path(const std::filesystem::path& tool_path_stl)
  * Works by testing for every element in the volumetric mesh to see if it's in the surface mesh and sum up all the elements that are
 */
 static std::pair<double, double> intersection_volume(const C3t3& c3,
-                           const Surface_mesh& shell)
+                           Surface_mesh& shell)
 {
+    /*
     // 1. Build an AABB tree and a point-inside tester on the shell
     using Primitive = CGAL::AABB_face_graph_triangle_primitive<Surface_mesh>;
     using Traits    = CGAL::AABB_traits_3<Kernel, Primitive>;
@@ -154,11 +174,13 @@ static std::pair<double, double> intersection_volume(const C3t3& c3,
         }
     }
     return {CGAL::to_double(intersection_volume), CGAL::to_double(total_volume)};     // intersection volume
+    */
     
     /*
     namespace PMP = CGAL::Polygon_mesh_processing;
 
-    double vol = 0.0;
+    Kernel::FT vol = 0.0;
+    Kernel::FT total_volume = 0;
     auto& tr = c3.triangulation();
 
     for (auto cit = tr.finite_cells_begin(); cit != tr.finite_cells_end(); ++cit)
@@ -175,14 +197,28 @@ static std::pair<double, double> intersection_volume(const C3t3& c3,
         Surface_mesh clipped = tet_mesh;
         Surface_mesh shell_copy = shell;
 
+        total_volume += PMP::volume(tet_mesh);
         PMP::clip(clipped, shell_copy, PMP::parameters::clip_volume(true));
 
         if (!clipped.is_empty())
             vol += PMP::volume(clipped);
     }
 
-    return vol;
+    return {CGAL::to_double(vol), CGAL::to_double(total_volume)};
     */
+
+    Surface_mesh surface_mesh;
+    CGAL::facets_in_complex_3_to_triangle_mesh(c3, surface_mesh);
+    CGAL::Polygon_mesh_processing::orient(surface_mesh);
+    CGAL::Polygon_mesh_processing::remove_degenerate_faces(surface_mesh);
+    CGAL::Polygon_mesh_processing::stitch_borders(surface_mesh);
+    CGAL::Polygon_mesh_processing::duplicate_non_manifold_vertices(surface_mesh);
+
+    Surface_mesh intersection_mesh;
+    CGAL::Polygon_mesh_processing::corefine_and_compute_intersection(surface_mesh, shell, intersection_mesh);
+
+    return {CGAL::to_double(CGAL::Polygon_mesh_processing::volume(intersection_mesh)), CGAL::to_double(CGAL::Polygon_mesh_processing::volume(surface_mesh))};
+
 }
 
 
@@ -201,6 +237,7 @@ static double objective_func(const std::vector<double>& x, std::vector<double>& 
     double pressure = x[0];
 
     FEA fea(*handler);
+
     C3t3 deformed_mesh = fea.apply_trench_force(pressure);
 
     std::pair<double, double> volumes = intersection_volume(deformed_mesh, *goal_mesh);
@@ -214,6 +251,8 @@ static double objective_func(const std::vector<double>& x, std::vector<double>& 
               << " | penalty=" << context->lambda * volume_mismatch
               << " | total=" << objective 
               << "\n";
+
+    export_surface_mesh("debug_mesh.stl", &deformed_mesh);
     return objective; // NLopt will maximize this
 
 }
@@ -225,7 +264,7 @@ static double objective_func(const std::vector<double>& x, std::vector<double>& 
 */
 void MeshHandler::set_stress_in_cut(const std::filesystem::path& tool_path_stl, const std::filesystem::path& deformed_stl)
 {
-    export_surface_mesh("starting_mesh.stl");
+    export_surface_mesh("starting_mesh.stl", &volume_mesh);
     set_tool_path(tool_path_stl); // sets all values in nodes vector to what we need to simulate the cut
     
     std::cout << "Summary after tool path" << std::endl;
@@ -242,13 +281,24 @@ void MeshHandler::set_stress_in_cut(const std::filesystem::path& tool_path_stl, 
 
     nlopt::opt opt(nlopt::LN_COBYLA, 1);  // 1 parameter: pressure
     opt.set_max_objective(objective_func, &context);
-    opt.set_lower_bounds(-5000.0);
-    opt.set_upper_bounds(5000.0);
+    opt.set_lower_bounds(-100);
+    opt.set_upper_bounds(100);
     opt.set_xtol_rel(1e-3);
 
-    std::vector<double> x = {100.0};
+    std::vector<double> x = {0};
     double max_volume;
     opt.optimize(x, max_volume);
+
+
+    std::cout << "[Optimization] Best pressure = "
+              << x[0] << " MPa (volume = " << max_volume << ")\n";
+
+
+
+    FEA fea(*this);
+
+    fea.get_cut_stress_field(x[0]);
+
 
     for (std::shared_ptr<Node> node : nodes)
     {
@@ -258,18 +308,6 @@ void MeshHandler::set_stress_in_cut(const std::filesystem::path& tool_path_stl, 
         }
 
     }
-
-    std::cout << "[Optimization] Best pressure = "
-              << x[0] << " MPa (volume = " << max_volume << ")\n";
-
-
-    export_surface_mesh("debug_mesh.stl");
-
-    FEA fea(*this);
-
-    //This doesn't work yet
-    //fea.get_cut_stress_field(x[0]);
-
 }
 
 
@@ -319,10 +357,10 @@ void MeshHandler::print_summary() const
  * Outputs the current volumetric mesh stored in the class as an stl file
  * This is very helpful for testing
 */
-void MeshHandler::export_surface_mesh(const std::filesystem::path& out_path) const
+void export_surface_mesh(const std::filesystem::path& out_path, const C3t3 *input_mesh)
 {
     Surface_mesh surface_mesh;
-    CGAL::facets_in_complex_3_to_triangle_mesh(volume_mesh, surface_mesh);
+    CGAL::facets_in_complex_3_to_triangle_mesh(*input_mesh, surface_mesh);
 
     if (!CGAL::IO::write_polygon_mesh(out_path.string(), surface_mesh, CGAL::parameters::stream_precision(17))) {
         throw std::runtime_error("Failed to write surface mesh to " + out_path.string());

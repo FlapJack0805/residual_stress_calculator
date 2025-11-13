@@ -31,6 +31,7 @@ static double tet_quality(const Point& a, const Point& b, const Point& c, const 
 */
 C3t3 FEA::apply_trench_force(double pressure)
 {
+
     const auto& nodes = mesh.get_nodes();
     const auto& c3t3 = mesh.get_c3t3();
     const auto& tr = c3t3.triangulation();
@@ -41,40 +42,138 @@ C3t3 FEA::apply_trench_force(double pressure)
     if (!inp.is_open())
         throw std::runtime_error("Failed to open CalculiX input file");
 
+
+    std::map<Tr::Vertex_handle, size_t> node_id_map;
+    std::unordered_set<size_t> corner_node_ids;
+    std::map<std::pair<size_t, size_t>, size_t> midside_node_map;
+    size_t id = 1;
+
+    auto make_edge_key = [&](size_t a, size_t b) 
+    {
+        return (a < b) ? std::pair{a,b} : std::pair{b,a};
+    };
+
+    auto get_midside_node = [&](Tr::Vertex_handle a, Tr::Vertex_handle b) -> size_t
+    {
+        // get corner IDs
+        size_t idA = node_id_map[a];
+        size_t idB = node_id_map[b];
+
+        std::pair<size_t, size_t> key = make_edge_key(idA, idB);
+
+        // Already created?
+        auto it = midside_node_map.find(key);
+        if (it != midside_node_map.end())
+            return it->second;
+
+        // Create midpoint
+        const auto& p1 = a->point().point();
+        const auto& p2 = b->point().point();
+        Point mid( (p1.x()+p2.x())*0.5,
+                   (p1.y()+p2.y())*0.5,
+                   (p1.z()+p2.z())*0.5 );
+
+        // New node ID
+        size_t new_id = id++;        // IMPORTANT: uses same node-id counter
+
+
+        // Export midside node to .inp file
+        inp << new_id << ", "
+            << mid.x() << ", " << mid.y() << ", " << mid.z() << "\n";
+
+        // Store midside ID
+        midside_node_map[key] = new_id;
+        return new_id;
+    };
+
     // -------------------------------
     // *NODE block
     // -------------------------------
     inp << "*NODE\n";
-    std::map<Tr::Vertex_handle, size_t> node_id_map;
-    size_t id = 1;
 
-    for (auto vit = tr.finite_vertices_begin(); vit != tr.finite_vertices_end(); ++vit, ++id) {
+    for (auto vit = tr.finite_vertices_begin(); 
+         vit != tr.finite_vertices_end(); 
+         ++vit)
+    {
         const Point p = vit->point().point();
-        node_id_map.insert({vit, id});
+        node_id_map[vit] = id;
+        corner_node_ids.insert(id);
+
         inp << id << ", " << p.x() << ", " << p.y() << ", " << p.z() << "\n";
+
+        id++;   // increment ONLY here
+    }
+
+    for (auto cit = tr.finite_cells_begin(); 
+         cit != tr.finite_cells_end(); 
+         ++cit)
+    {
+        Tr::Vertex_handle v1 = cit->vertex(0);
+        Tr::Vertex_handle v2 = cit->vertex(1);
+        Tr::Vertex_handle v3 = cit->vertex(2);
+        Tr::Vertex_handle v4 = cit->vertex(3);
+
+        // Skip bad-quality tets just like you do for element writing
+        if (tet_quality(v1->point().point(),
+                        v2->point().point(),
+                        v3->point().point(),
+                        v4->point().point()) < 0.05)
+            continue;
+
+        // Generate midside nodes for all 6 edges
+        get_midside_node(v1, v2);  // n12
+        get_midside_node(v1, v3);  // n13
+        get_midside_node(v1, v4);  // n14
+        get_midside_node(v2, v3);  // n23
+        get_midside_node(v2, v4);  // n24
+        get_midside_node(v3, v4);  // n34
     }
 
     inp << "*NSET, NSET=ALL, GENERATE\n1, " << id-1 << ", 1\n";
+
 
     // -------------------------------
     // *ELEMENT block (C3D10)
     // -------------------------------
     //inp << "*ELEMENT, TYPE=C3D10, ELSET=TRENCH_ELEMS\n";
     //will switch to C3D10 later because it's better but C3D4 is easier to get this working first
-    inp << "*ELEMENT, TYPE=C3D4, ELSET=TRENCH_ELEMS\n";
+    inp << "*ELEMENT, TYPE=C3D10, ELSET=TRENCH_ELEMS\n";
+
+    std::unordered_map<Tr::Cell_handle, size_t> cell_to_elem_id;
     size_t elem_id = 1;
+    for (auto cit = tr.finite_cells_begin(); 
+         cit != tr.finite_cells_end(); 
+         ++cit)
+    {
+        Tr::Vertex_handle v1 = cit->vertex(0);
+        Tr::Vertex_handle v2 = cit->vertex(1);
+        Tr::Vertex_handle v3 = cit->vertex(2);
+        Tr::Vertex_handle v4 = cit->vertex(3);
 
-    for (auto cit = tr.finite_cells_begin(); cit != tr.finite_cells_end(); ++cit, ++elem_id) {
-
-        if (tet_quality(cit->vertex(0)->point().point(), cit->vertex(1)->point().point(), cit->vertex(2)->point().point(), cit->vertex(3)->point().point()) < 0.05)
-        {
+        if (tet_quality(v1->point().point(),
+                        v2->point().point(),
+                        v3->point().point(),
+                        v4->point().point()) < 0.05)
             continue;
-        }
 
-        inp << elem_id;
-        for (int i = 0; i < 4; ++i)
-            inp << ", " << node_id_map.at(cit->vertex(i));
-        inp << "\n";
+        size_t n1 = node_id_map[v1];
+        size_t n2 = node_id_map[v2];
+        size_t n3 = node_id_map[v3];
+        size_t n4 = node_id_map[v4];
+
+        size_t n5  = midside_node_map[make_edge_key(n1,n2)]; // 1-2
+        size_t n6  = midside_node_map[make_edge_key(n2,n3)]; // 2-3
+        size_t n7  = midside_node_map[make_edge_key(n3,n1)]; // 3-1
+        size_t n8  = midside_node_map[make_edge_key(n1,n4)]; // 1-4
+        size_t n9  = midside_node_map[make_edge_key(n2,n4)]; // 2-4
+        size_t n10 = midside_node_map[make_edge_key(n3,n4)]; // 3-4
+        
+        cell_to_elem_id[cit] = elem_id;
+
+        inp << elem_id++ << ", "
+            << n1  << ", " << n2  << ", " << n3  << ", " << n4  << ", "
+            << n5  << ", " << n6  << ", " << n7  << ", "
+            << n8  << ", " << n9  << ", " << n10 << "\n";
     }
 
     // -------------------------------
@@ -101,9 +200,16 @@ C3t3 FEA::apply_trench_force(double pressure)
     // Collect trench faces
     std::vector<FaceRef> trench_faces;
 
-    size_t elem_counter = 1;
-    for (auto cit = tr.finite_cells_begin(); cit != tr.finite_cells_end(); ++cit, ++elem_counter)
+    for (auto cit = tr.finite_cells_begin(); cit != tr.finite_cells_end(); ++cit)
     {
+        auto it_elem = cell_to_elem_id.find(cit);
+        if (it_elem == cell_to_elem_id.end())
+        {
+            continue; // this cell was skipped (bad quality) → no element
+        }
+
+        size_t eid = it_elem->second;
+        
         for (int face = 0; face < 4; ++face)
         {
             int v0 = (face + 1) % 4;
@@ -134,7 +240,7 @@ C3t3 FEA::apply_trench_force(double pressure)
                 //if (az > ax && az > ay) continue;
                 //std::cout << "adding load to face" << std::endl;
 
-                trench_faces.push_back({elem_counter, face + 1});
+                trench_faces.push_back({eid, face + 1});
             }
         }
     }
@@ -206,8 +312,7 @@ C3t3 FEA::apply_trench_force(double pressure)
     {
             if (line.find("displacement") != std::string::npos)
             {
-                    in_displacement = true;
-                    continue;
+                    in_displacement = true; continue;
             }
 
             if (in_displacement && line.empty())
@@ -218,6 +323,15 @@ C3t3 FEA::apply_trench_force(double pressure)
             if (in_displacement)
             {
                     std::size_t id; double dx,dy,dz;
+
+                    // Since CGAL can only represent C3D4 meshes we can only export corner nodes
+                    /*
+                    if (corner_node_ids.find(id) == corner_node_ids.end())
+                    {
+                        continue;
+                    }
+                    */
+
                     std::istringstream(line) >> id >> dx >> dy >> dz;
                     id_to_displacement[id] = Vector(dx,dy,dz);
             }
@@ -264,165 +378,225 @@ void FEA::get_cut_stress_field(double pressure)
 {
     const auto& nodes = mesh.get_nodes();
     const auto& c3t3 = mesh.get_c3t3();
-    const auto& tr = c3t3.triangulation();
+    const auto& tr   = c3t3.triangulation();
 
-    const std::string BASE_FILE_NAME = "calculix";
+    std::string BASE_FILE_NAME = "calculix";
 
     std::ofstream inp(BASE_FILE_NAME + ".inp");
     if (!inp.is_open())
         throw std::runtime_error("Failed to open CalculiX input file");
 
-    // -------------------------------
-    // *NODE block
-    // -------------------------------
+    // -----------------------------------------------------
+    // NODES
+    // -----------------------------------------------------
     inp << "*NODE\n";
     std::map<Tr::Vertex_handle, size_t> node_id_map;
-    std::map<size_t, Tr::Vertex_handle> id_node_map;
     size_t id = 1;
 
-    for (auto vit = tr.finite_vertices_begin(); vit != tr.finite_vertices_end(); ++vit, ++id) 
+    for (auto vit = tr.finite_vertices_begin(); vit != tr.finite_vertices_end(); ++vit, ++id)
     {
         const Point p = vit->point().point();
         node_id_map[vit] = id;
-        id_node_map[id] = vit;
         inp << id << ", " << p.x() << ", " << p.y() << ", " << p.z() << "\n";
     }
 
-    // -------------------------------
-    // *ELEMENT block (C3D10)
-    // -------------------------------
-    inp << "*ELEMENT, TYPE=C3D10, ELSET=TRENCH_ELEMS\n";
+    inp << "*NSET, NSET=ALL, GENERATE\n1," << id-1 << ",1\n";
+
+    // -----------------------------------------------------
+    // ELEMENTS (C3D4 for now)
+    // -----------------------------------------------------
+    inp << "*ELEMENT, TYPE=C3D4, ELSET=TRENCH_ELEMS\n";
     size_t elem_id = 1;
-    for (auto cit = tr.finite_cells_begin(); cit != tr.finite_cells_end(); ++cit, ++elem_id) 
+    for (auto cit = tr.finite_cells_begin(); cit != tr.finite_cells_end(); ++cit, ++elem_id)
     {
+        if (tet_quality(cit->vertex(0)->point().point(),
+                        cit->vertex(1)->point().point(),
+                        cit->vertex(2)->point().point(),
+                        cit->vertex(3)->point().point()) < 0.05)
+            continue;
+
         inp << elem_id;
         for (int i = 0; i < 4; ++i)
             inp << ", " << node_id_map.at(cit->vertex(i));
         inp << "\n";
     }
 
-    // -------------------------------
-    // MATERIAL and SECTION
-    // -------------------------------
+    // -----------------------------------------------------
+    // MATERIAL
+    // -----------------------------------------------------
     inp << "*MATERIAL, NAME=ALUMINUM\n";
-    inp << "*ELASTIC\n";
-    inp << "69000, 0.33\n"; // MPa
+    inp << "*ELASTIC\n69000., 0.33\n";
     inp << "*SOLID SECTION, ELSET=TRENCH_ELEMS, MATERIAL=ALUMINUM\n";
 
-    // -------------------------------
-    // BOUNDARY CONDITIONS
-    // -------------------------------
+    // -----------------------------------------------------
+    // BOUNDARIES
+    // -----------------------------------------------------
     inp << "*BOUNDARY\n";
-    for (const auto& node : nodes) 
-    {
-        if (node->is_boundary) 
-        {
+    for (const auto& node : nodes)
+        if (node->is_boundary)
             inp << node_id_map.at(node->handle) << ", 1, 3, 0.0\n";
-        }
-    }
 
-    // -------------------------------
-    // SURFACE SET for trench wall
-    // -------------------------------
-    inp << "*SURFACE, TYPE=ELEMENT, NAME=TRENCH_FACES\n";
-    std::unordered_set<size_t> trench_element_ids;
+    // -----------------------------------------------------
+    // SURFACE & PRESSURE (same trench face logic)
+    // -----------------------------------------------------
+    std::vector<FaceRef> trench_faces;
     size_t elem_counter = 1;
 
-    for (auto cit = tr.finite_cells_begin(); cit != tr.finite_cells_end(); ++cit, ++elem_counter) {
-        bool has_force_node = false;
-        for (int i = 0; i < 4; ++i) {
-            auto vh = cit->vertex(i);
-            const auto& node = nodes[node_id_map.at(vh) - 1];
-            if (node->status == NodeStatus::FORCE_NODE)
-                has_force_node = true;
-        }
-        if (has_force_node) {
-            trench_element_ids.insert(elem_counter);
-            inp << elem_counter << ", S1\n"; // or S2/S3/S4 if you know which face is the wall
+    for (auto cit = tr.finite_cells_begin(); cit != tr.finite_cells_end(); ++cit, ++elem_counter)
+    {
+        for (int face = 0; face < 4; ++face)
+        {
+            auto vh0 = cit->vertex((face + 1) % 4);
+            auto vh1 = cit->vertex((face + 2) % 4);
+            auto vh2 = cit->vertex((face + 3) % 4);
+
+            const auto& n0 = nodes[node_id_map.at(vh0) - 1];
+            const auto& n1 = nodes[node_id_map.at(vh1) - 1];
+            const auto& n2 = nodes[node_id_map.at(vh2) - 1];
+
+            if (n0->status == NodeStatus::FORCE_NODE ||
+                n1->status == NodeStatus::FORCE_NODE ||
+                n2->status == NodeStatus::FORCE_NODE)
+            {
+                trench_faces.push_back({elem_counter, face + 1});
+            }
         }
     }
 
-    // -------------------------------
-    // LOAD STEP (apply pressure + output)
-    // -------------------------------
-    inp << "*STEP\n";
-    inp << "*STATIC\n";
-    inp << "*DLOAD\n";
-    inp << "TRENCH_FACES, P, " << pressure << "\n";
-    inp << "*NODE PRINT, NSET=ALL\nU\n";
-    inp << "*EL FILE\nS\n";
-    inp << "*END STEP\n";
+    inp << "*SURFACE, TYPE=ELEMENT, NAME=TRENCH_FACES\n";
+    for (auto& f : trench_faces)
+        inp << f.elem_id << ", S" << f.face_id << "\n";
 
+    // -----------------------------------------------------
+    // LOAD STEP
+    // -----------------------------------------------------
+    inp << "*STEP\n*STATIC\n*DLOAD\n";
+    inp << "TRENCH_FACES, P, " << pressure << "\n";
+    inp << "*NODE FILE, NSET=ALL\nU\n";
+    inp << "*EL FILE, ELSET=TRENCH_ELEMS\nS\n";
+    inp << "*NODE PRINT, NSET=ALL\nU\n";
+    inp << "*EL PRINT, ELSET=TRENCH_ELEMS\nS\n";
+    inp << "*END STEP\n";
     inp.close();
 
-    // -------------------------------
+    // -----------------------------------------------------
     // Run CalculiX
-    // -------------------------------
-    std::string cmd = "ccx " + BASE_FILE_NAME + " > /dev/null 2>&1";
-    int result = std::system(cmd.c_str());
-    if (result != 0)
+    // -----------------------------------------------------
+    if (std::system(("ccx " + BASE_FILE_NAME + " > /dev/null 2>&1").c_str()) != 0)
         throw std::runtime_error("CalculiX run failed");
 
-    std::cout << "[FEA] CalculiX simulation complete with pressure = "
-              << pressure << " MPa\n";
+    std::cout << "[FEA] Simulation complete, extracting stress field.\n";
 
-    // -------------------------------
-    // Parse .frd for stress tensors
-    // -------------------------------
-    std::ifstream frd("calculix.frd");
-    if (!frd.is_open())
-        throw std::runtime_error("Cannot open calculix.frd");
+    // -----------------------------------------------------
+    // Parse calculix.dat for stress tensors
+    // -----------------------------------------------------
+    std::ifstream dat("calculix.dat");
+    if (!dat.is_open())
+        throw std::runtime_error("Cannot open calculix.dat");
 
-    std::unordered_map<Tr::Vertex_handle, StressTensor> handle_to_tensor;
+    // -----------------------------------------------------
+    // 1. Parse stresses from CalculiX .dat file
+    // -----------------------------------------------------
+    std::unordered_map<size_t, StressTensor> id_to_stress;
     std::string line;
-    bool in_frame = false;
+    bool in_stress = false;
 
-    while (std::getline(frd, line)) 
+    while (std::getline(dat, line))
     {
-        if (line.rfind("3C", 0) == 0) 
+        // Find the start of the stress block
+        if (line.find("stresses") != std::string::npos)
         {
-            in_frame = !in_frame;
+            std::cout << "found stresses" << std::endl;
+            in_stress = true;
             continue;
         }
-        if (!in_frame) continue;
-        if (line.size() < 2 || line[0] != ' ' || line[1] != '1') continue;
 
-        // Expected layout: " 1 <nodeID> 1  S  <Sxx> <Syy> <Szz> <Sxy> <Sxz> <Syz>"
-        int rec, node_id, one;
-        char key;
-        double sxx, syy, szz, sxy, sxz, syz;
+        // End of block (empty line or another header)
+        if (in_stress && (line.empty() || line[0] == '-'))
+        {
+            continue;
+        }
+
+        if (!in_stress) continue;
+
         std::istringstream iss(line);
-        iss >> rec >> node_id >> one >> key >> sxx >> syy >> szz >> sxy >> sxz >> syz;
+        size_t elem_id;
+        int ip; // integration point (ignore for C3D4)
+        double sxx, syy, szz, sxy, sxz, syz;
 
-        auto it = id_node_map.find(node_id);
-        if (it != id_node_map.end())
-            handle_to_tensor[it->second] = {sxx, syy, szz};
+        // Parse 8 fields: element, integ.pnt., 6 stresses
+        if (iss >> elem_id >> ip >> sxx >> syy >> szz >> sxy >> sxz >> syz)
+        {
+            // Store only the normal components for now
+            id_to_stress[elem_id] = StressTensor{sxx, syy, szz};
+        }
     }
 
-    // -------------------------------
-    // Write back to mesh
-    // -------------------------------
-    for (auto& node : mesh.get_nodes()) 
+    dat.close();
+
+    std::cout << "[FEA] Parsed " << id_to_stress.size() << " element stresses from .dat\n";
+
+    // -----------------------------------------------------
+    // 2. Average stresses to nodes
+    // -----------------------------------------------------
+    std::unordered_map<Tr::Vertex_handle, StressTensor> avg_stress;
+    std::unordered_map<Tr::Vertex_handle, int> counts;
+
+    // If you generated the .inp sequentially, element IDs = iteration order
+    size_t eid = 1;
+    for (auto cit = tr.finite_cells_begin(); cit != tr.finite_cells_end(); ++cit, ++eid)
     {
-        auto it = handle_to_tensor.find(node->handle);
-        if (it != handle_to_tensor.end())
-            node->stress = it->second;
+
+        if (tet_quality(cit->vertex(0)->point().point(),
+                        cit->vertex(1)->point().point(),
+                        cit->vertex(2)->point().point(),
+                        cit->vertex(3)->point().point()) < 0.05)
+            continue;
+
+        auto it = id_to_stress.find(eid);
+        if (it == id_to_stress.end()) continue;
+
+        // Distribute the element stress to each vertex of the tetrahedron
+        for (int i = 0; i < 4; ++i)
+        {
+            auto vh = cit->vertex(i);
+            avg_stress[vh].xx += it->second.xx;
+            avg_stress[vh].yy += it->second.yy;
+            avg_stress[vh].zz += it->second.zz;
+            counts[vh]++;
+        }
     }
 
-    // -------------------------------
-    // Export CSV
-    // -------------------------------
+    // -----------------------------------------------------
+    // 3. Export averaged nodal stresses to CSV
+    // -----------------------------------------------------
     std::ofstream out("stress_field.csv");
     out << "x,y,z,sxx,syy,szz\n";
-    for (const auto& node : mesh.get_nodes()) 
+
+    for (auto node : mesh.get_nodes())
     {
-        out << node->position.x() << ","
-            << node->position.y() << ","
-            << node->position.z() << ","
-            << node->stress.xx << ","
-            << node->stress.yy << ","
-            << node->stress.zz << "\n";
+        auto vh = node->handle;
+        auto it = counts.find(vh);
+        if (it == counts.end()) 
+        {
+            //std::cout << "Couldn't find vertex handle in counts" << std::endl;
+            continue;
+        }
+
+        if (node->status == NodeStatus::CUT_NEXT || node->status == NodeStatus::FORCE_NODE)
+        {
+            double n = static_cast<double>(it->second);
+            const auto& pt = vh->point();
+            const auto& s = avg_stress[vh];
+
+            out << pt.x() << "," << pt.y() << "," << pt.z() << ","
+                << s.xx / n << "," << s.yy / n << "," << s.zz / n << "\n";
+        }
+
     }
+
+    out.close();
+    std::cout << "[FEA] Stress field written to stress_field.csv\n";
 }
 
 
