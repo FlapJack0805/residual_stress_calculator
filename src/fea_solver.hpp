@@ -19,4 +19,6 @@ public:
 	C3t3 apply_trench_force(double pressure);
 	void get_cut_stress_field(double pressure);
 	void get_full_stress_field();
+	C3t3 simulate_cut(std::vector<Tr::Cell_handle> cut_nodes);
+	C3t3 displace_enterior(std::vector<std::pair<size_t, MyVector>> displacements);
 };

@@ -19,6 +19,7 @@
 #include <CGAL/Triangulation_3.h>
 #include <CGAL/Tetrahedron_3.h>
 #include <CGAL/tetrahedron_soup_to_triangulation_3.h>
+#include <CGAL/Surface_mesh/Surface_mesh.h>
 
 #include <CGAL/Polyhedral_mesh_domain_with_features_3.h>
 #include <CGAL/Mesh_triangulation_3.h>               
@@ -93,7 +94,8 @@ enum class NodeStatus
 	UN_CUT = 0,
 	CUT_NEXT,
 	CUT,
-	FORCE_NODE
+	FORCE_NODE,
+	KNOWN_WALL
 };
 
 
@@ -121,12 +123,16 @@ struct Node
 	StressTensor stress;
 	NodeStatus status;
 	bool is_boundary;
+	bool is_exterior;
+	double pressure;
+	
+	//TODO: Check if I use this because I don't think I do and if I do I shouldn't be because it's really stupdid
 	std::vector<MyVector> deformations; // store all deformations so we can backtrack at the end to get to origional location
 
 	Node(Tr::Vertex_handle handle_in, Point position_in, MyVector normal_vector_in)
-	: handle(handle_in), position(position_in), normal_vector(normal_vector_in), status(NodeStatus::UN_CUT), is_boundary(false) {}
+	: handle(handle_in), position(position_in), normal_vector(normal_vector_in), status(NodeStatus::UN_CUT), is_boundary(false), is_exterior(false) {}
 
-	Node() : status(NodeStatus::UN_CUT), is_boundary(false) {}
+	Node() : status(NodeStatus::UN_CUT), is_boundary(false), is_exterior(false) {}
 };
 
 
@@ -134,9 +140,8 @@ struct OptimizationContext
 {
     MeshHandler* handler;
     Surface_mesh* goal_mesh;
-    double goal_volume;   // precomputed once at start
-    double lambda;        // penalty strength
-    C3t3 defomred_mesh;
+    //double goal_volume;   // precomputed once at start
+    //C3t3 defomred_mesh;
 };
 
 
@@ -146,17 +151,21 @@ class MeshHandler
 	C3t3 volume_mesh;
 	std::vector<std::shared_ptr<Node>> nodes; // each index is the node id
 	void set_tool_path(const std::filesystem::path& tool_path_stl);
+	std::vector<Tr::Cell_handle> set_simulated_tool_path(const Surface_mesh& tool_path_mesh);
+
 
 public:
 	MeshHandler(const std::filesystem::path& mesh_stl, const std::filesystem::path& boundary_stl);
+	MeshHandler(const Surface_mesh& mesh, const std::vector<Point>& boundary_points);
 	void set_stress_in_cut(const std::filesystem::path& tool_path_stl, const std::filesystem::path& deformed_mesh);
-	void print_summary() const;
+	C3t3 simulate_cut(const Surface_mesh& tool_path);
 
 	inline const std::vector<std::shared_ptr<Node>>& get_nodes() const { return nodes; }
 	inline std::shared_ptr<Node> get_node(size_t id) { return nodes.at(id); }
 	inline size_t get_node_count() const { return nodes.size(); }
 	inline const C3t3& get_c3t3() const { return volume_mesh; }
 	inline C3t3& get_c3t3() { return volume_mesh; }
+	void print_summary() const;
 };
 
 
