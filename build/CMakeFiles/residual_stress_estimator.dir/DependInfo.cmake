@@ -11,8 +11,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/jstifter/code/research/residual_stress/residual_stress_estimator/src/fea_solver.cpp" "CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o" "gcc" "CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o.d"
   "/home/jstifter/code/research/residual_stress/residual_stress_estimator/src/main.cpp" "CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o" "gcc" "CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o.d"
   "/home/jstifter/code/research/residual_stress/residual_stress_estimator/src/mesh_handler.cpp" "CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o" "gcc" "CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o.d"
-  "/home/jstifter/code/research/residual_stress/residual_stress_estimator/src/optimizer.cpp" "CMakeFiles/residual_stress_estimator.dir/src/optimizer.cpp.o" "gcc" "CMakeFiles/residual_stress_estimator.dir/src/optimizer.cpp.o.d"
-  "/home/jstifter/code/research/residual_stress/residual_stress_estimator/src/stress_field.cpp" "CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o" "gcc" "CMakeFiles/residual_stress_estimator.dir/src/stress_field.cpp.o.d"
   "" "bin/residual_stress_estimator" "gcc" "CMakeFiles/residual_stress_estimator.dir/link.d"
   )
 

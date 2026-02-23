@@ -1,6 +1,7 @@
 /home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/residual_stress_estimator.dir
 /home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/mesh_handler_tester.dir
 /home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/set_stress_test.dir
+/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/absolute_truth_tester.dir
 /home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/edit_cache.dir
 /home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/rebuild_cache.dir
 /home/jstifter/code/research/residual_stress/residual_stress_estimator/build/_deps/cli11-build/CMakeFiles/edit_cache.dir

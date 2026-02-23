@@ -33,15 +33,13 @@ find_library(NLOPT_LIB nlopt REQUIRED)
 set(SRC_FILES
     src/mesh_handler.cpp
     src/fea_solver.cpp
-    src/optimizer.cpp
-    src/stress_field.cpp
+    ~/code/research/residual_stress/surfacic_toolpaths/src/*.cpp #Change this to your path
 )
 
 set(HDR_FILES
     src/mesh_handler.hpp
     src/fea_solver.hpp
-    src/optimizer.hpp
-    src/stress_field.hpp
+    ~/code/research/residual_stress/surfacic_toolpaths/include/toolpath.hxx #Change this to your path
 )
 
 # -----------------------------
@@ -77,6 +75,11 @@ add_executable(set_stress_test
     src/set_stress_test.cpp
 )
 
+add_executable(absolute_truth_tester
+    ${SRC_FILES}
+    src/tester.cpp
+)
+
 
 target_link_libraries(set_stress_test
     PRIVATE
@@ -88,6 +91,15 @@ target_link_libraries(set_stress_test
 )
 
 target_link_libraries(mesh_handler_tester
+    PRIVATE
+        CLI11::CLI11
+        CGAL::CGAL
+        ${NLOPT_LIB}
+        gmp
+        mpfr
+)
+
+target_link_libraries(absolute_truth_tester
     PRIVATE
         CLI11::CLI11
         CGAL::CGAL

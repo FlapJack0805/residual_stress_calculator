@@ -7,9 +7,16 @@
 #include <vector>
 #include <cstdlib>
 #include <stdexcept>
+#include <sstream>
+#include <tuple>
 #include "mesh_handler.hpp"
+#include <CLI/CLI.hpp>
+#include "../../surfacic_toolpaths/include/toolpath.hxx"
+
+#define LENGTH_OF_CUT 10 // TODO: Find out a reasonable size for each cut
 
 namespace fs = std::filesystem;
+
 
 struct Config 
 {
@@ -21,9 +28,68 @@ struct Config
     int max_steps = 50;
 };
 
+struct Position
+{
+    double x;
+    double y;
+    double z;
+
+    Position operator+(const Position& other)
+    {
+        return {x + other.x, y + other.y , z + other.z};
+    }
+
+    Position operator-(const Position& other)
+    {
+        return {x - other.x, y - other.y , z - other.z};
+    }
+};
+
 // -------------------------------
 // Simple utilities
 // -------------------------------
+
+Point3D position_to_point3D(Position pos)
+{
+    return Point3D{pos.x, pos.y, pos.z};
+}
+
+Vec3D delta_to_vec3D(const Position& a, const Position& b) 
+{
+    return Vec3D{b.x - a.x, b.y - a.y, b.z - a.z};
+}
+
+double wrap_0_2pi(double a)
+{
+    const double TWO_PI = 2.0 * M_PI;
+    while (a < 0) a += TWO_PI;
+    while (a >= TWO_PI) a -= TWO_PI;
+    return a;
+}
+
+std::pair<Position, double> arcMidpoint(const Position& center, const Position& start, const Position& end, bool ccw)
+{
+    double th1 = atan2(start.y - center.y, start.x - center.x);
+    double th2 = atan2(end.y - center.y, end.x - center.x);
+
+    double delta = ccw
+        ? wrap_0_2pi(th2 - th1)
+        : wrap_0_2pi(th1 - th2);
+
+    double thm = ccw
+        ? th1 + delta * 0.5
+        : th1 - delta * 0.5;
+
+    double R = hypot(start.x - center.x, start.y - center.y);
+
+    double arc_length = R * delta;
+
+    return {{
+        center.x + R * cos(thm),
+        center.y + R * sin(thm),
+        center.z
+    }, arc_length};
+}
 
 static void write_text_file(const fs::path& p, const std::string& s) 
 {
@@ -213,7 +279,7 @@ static VtkMesh::Point cell_centroid(const VtkMesh& m, size_t ci)
 // - element labels to deactivate
 static std::vector<int> compute_elements_to_remove(
     const VtkMesh& active_fe_mesh,
-    const fs::path& cut_volume_mesh_path
+    const fs::path& cut_volume_mesh_path,
     int step_idx
 ) 
 {
@@ -284,6 +350,148 @@ static fs::path propose_next_cut_volume_mesh(
 int main(int argc, char** argv) 
 {
     (void)argc; (void)argv;
+
+    CLI::App app{"Automated Abaqus Tester"};
+
+    fs::path starting_mesh_stl, g_code_file;
+
+    app.add_option("--starting_mesh_stl", starting_mesh_stl)->required();
+    app.add_option("--g_code", g_code_file)->required();
+
+    CLI11_PARSE(app, argc, argv);
+
+    CylindricalTool tool{ .radius = 3.0, .height = 10.0 };
+
+    std::vector<Line> lines;
+    std::vector<ArcOfCircle> arcs;
+    std::vector<InterpolatedCurve> splines;
+    std::vector<Circle> circles;
+    std::vector<ToolPath> toolpaths;
+
+
+    std::ifstream g_code(g_code_file);
+    std::string line_string;
+    Position current_pos = {0, 0, 0};
+
+    double cut_length = 0;
+    while (std::getline(g_code, line_string))
+    {
+        std::stringstream line(line_string);
+
+        std::string command;
+        std::getline(line, command, ' ');
+
+        // straight line cut
+        if (command == "G0" || command == "G1") // line
+        {
+            std::string x_pos;
+            std::string y_pos;
+            std::string z_pos;
+            std::getline(line, x_pos, ' ');
+            std::getline(line, y_pos, ' ');
+            std::getline(line, z_pos, ' ');
+
+            // Remove the letter from the position value
+            x_pos.erase(0, 1);
+            y_pos.erase(0, 1);
+            z_pos.erase(0, 1);
+
+            Position next_pos = {std::stod(x_pos), std::stod(y_pos), std::stod(z_pos)};
+            double line_length = std::sqrt((current_pos.x - next_pos.x) * (current_pos.x - next_pos.x) + (current_pos.y - next_pos.y) * (current_pos.y - next_pos.y));
+
+            lines.push_back(Line{position_to_point3D(current_pos), delta_to_vec3D(current_pos, next_pos)});
+
+            cut_length += line_length;
+            current_pos = next_pos;
+
+        }
+
+        // clock wise arc
+        else if (command == "G2")
+        {
+            std::string end_pos_x, end_pos_y, x_offset, y_offset;
+            std::getline(line, end_pos_x, ' ');
+            std::getline(line, end_pos_y, ' ');
+            std::getline(line, x_offset, ' ');
+            std::getline(line, y_offset, ' ');
+
+            end_pos_x.erase(0, 1);
+            end_pos_y.erase(0, 1);
+            y_offset.erase(0, 2);
+
+            Position end_pos = {stod(end_pos_x), stod(end_pos_y), 0};
+
+            Position arc_center = current_pos - Position({stod(x_offset), stod(y_offset), 0});
+
+            std::pair<Position, double> arc_info = arcMidpoint(arc_center, current_pos, end_pos, false);
+
+            Position mid_point = arc_info.first;
+            double arc_length = arc_info.second;
+
+            //ArcOfCircle::ArcOfCircle(const std::pair<Point3D, Point3D>& arc_endpoints, const Point3D& arc_interior_point)
+            arcs.push_back(ArcOfCircle({position_to_point3D(current_pos), position_to_point3D(end_pos)}, 
+                                       position_to_point3D(mid_point)));
+
+            cut_length += arc_length;
+            current_pos = end_pos;
+        }
+
+        // conuter clock wise arc
+        else if (command == "G3")
+        {
+            std::string end_pos_x, end_pos_y, x_offset, y_offset;
+            std::getline(line, end_pos_x, ' ');
+            std::getline(line, end_pos_y, ' ');
+            std::getline(line, x_offset, ' ');
+            std::getline(line, y_offset, ' ');
+
+            end_pos_x.erase(0, 1);
+            end_pos_y.erase(0, 1);
+            y_offset.erase(0, 2);
+
+            Position end_pos = {stod(end_pos_x), stod(end_pos_y), 0};
+
+            Position arc_center = current_pos - Position({stod(x_offset), stod(y_offset), 0});
+
+            std::pair<Position, double> arc_info = arcMidpoint(arc_center, current_pos, end_pos, true);
+
+            Position mid_point = arc_info.first;
+            double arc_length = arc_info.second;
+
+            //ArcOfCircle::ArcOfCircle(const std::pair<Point3D, Point3D>& arc_endpoints, const Point3D& arc_interior_point)
+            arcs.push_back(ArcOfCircle({position_to_point3D(current_pos), position_to_point3D(end_pos)}, 
+                                       position_to_point3D(mid_point)));
+
+            cut_length += arc_length;
+            current_pos = end_pos;
+        }
+
+        if (cut_length > LENGTH_OF_CUT)
+        {
+            //ToolPath::ToolPath(const std::tuple<std::vector<Line>, 
+            //                        std::vector<ArcOfCircle>,
+            //                        std::vector<InterpolatedCurve>,
+            //                        std::vector<Circle>> compound,
+            //       const CylindricalTool& profile,
+            //       const bool display)
+
+            auto compound = std::make_tuple(lines, arcs, splines, circles);
+
+            ToolPath toolpath(compound, tool, false);
+
+            toolpaths.push_back(toolpath);
+
+            // triangulate it (controls triangle quality)
+            toolpath.mesh_surface(/*angle=*/0.35, /*deflection=*/0.1);
+
+            // write swept-volume STL (this is your “cut volume”)
+            toolpath.shape_to_stl("cut_step_001", "/abs/path/cut_step_001.stl");
+
+            cut_length = 0;
+        }
+
+    }
+
 
     Config cfg;
 
