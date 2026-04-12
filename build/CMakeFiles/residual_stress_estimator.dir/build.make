@@ -100,10 +100,108 @@ CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.s"
 	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/fea_solver.cpp -o CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.s
 
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.o: CMakeFiles/residual_stress_estimator.dir/flags.make
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.o: /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.o: CMakeFiles/residual_stress_estimator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.o"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.o -MF CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.o.d -o CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.o -c /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp
+
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.i"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp > CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.i
+
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.s"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp -o CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.s
+
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.o: CMakeFiles/residual_stress_estimator.dir/flags.make
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.o: /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.o: CMakeFiles/residual_stress_estimator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.o"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.o -MF CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.o.d -o CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.o -c /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp
+
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.i"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp > CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.i
+
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.s"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp -o CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.s
+
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.o: CMakeFiles/residual_stress_estimator.dir/flags.make
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.o: /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.o: CMakeFiles/residual_stress_estimator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.o"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.o -MF CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.o.d -o CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.o -c /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp
+
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.i"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp > CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.i
+
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.s"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp -o CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.s
+
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.o: CMakeFiles/residual_stress_estimator.dir/flags.make
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.o: /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.o: CMakeFiles/residual_stress_estimator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.o"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.o -MF CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.o.d -o CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.o -c /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp
+
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.i"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp > CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.i
+
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.s"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp -o CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.s
+
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.o: CMakeFiles/residual_stress_estimator.dir/flags.make
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.o: /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.o: CMakeFiles/residual_stress_estimator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.o"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.o -MF CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.o.d -o CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.o -c /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp
+
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.i"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp > CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.i
+
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.s"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp -o CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.s
+
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.o: CMakeFiles/residual_stress_estimator.dir/flags.make
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.o: /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.o: CMakeFiles/residual_stress_estimator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.o"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.o -MF CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.o.d -o CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.o -c /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp
+
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.i"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp > CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.i
+
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.s"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp -o CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.s
+
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.o: CMakeFiles/residual_stress_estimator.dir/flags.make
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.o: /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.o: CMakeFiles/residual_stress_estimator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.o"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.o -MF CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.o.d -o CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.o -c /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp
+
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.i"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp > CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.i
+
+CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.s"
+	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp -o CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.s
+
 CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o: CMakeFiles/residual_stress_estimator.dir/flags.make
 CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o: /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/main.cpp
 CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o: CMakeFiles/residual_stress_estimator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o"
 	/usr/lib/ccache/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o -MF CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o.d -o CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o -c /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/main.cpp
 
 CMakeFiles/residual_stress_estimator.dir/src/main.cpp.i: cmake_force
@@ -118,6 +216,13 @@ CMakeFiles/residual_stress_estimator.dir/src/main.cpp.s: cmake_force
 residual_stress_estimator_OBJECTS = \
 "CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o" \
 "CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o" \
+"CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.o" \
+"CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.o" \
+"CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.o" \
+"CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.o" \
+"CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.o" \
+"CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.o" \
+"CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.o" \
 "CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o"
 
 # External object files for target residual_stress_estimator
@@ -125,15 +230,44 @@ residual_stress_estimator_EXTERNAL_OBJECTS =
 
 bin/residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/src/mesh_handler.cpp.o
 bin/residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/src/fea_solver.cpp.o
+bin/residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.o
+bin/residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.o
+bin/residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.o
+bin/residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.o
+bin/residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.o
+bin/residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.o
+bin/residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.o
 bin/residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/src/main.cpp.o
 bin/residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/build.make
 bin/residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/compiler_depend.ts
-bin/residual_stress_estimator: /usr/lib/libnlopt.so
-bin/residual_stress_estimator: /usr/lib/libgmpxx.so
-bin/residual_stress_estimator: /lib/libmpfr.so
+bin/residual_stress_estimator: /usr/lib/libnlopt.so.1.0.0
+bin/residual_stress_estimator: /usr/lib/libglfw.so.3.4
 bin/residual_stress_estimator: /lib/libgmp.so
+bin/residual_stress_estimator: /lib/libmpfr.so
+bin/residual_stress_estimator: /usr/lib/libTKHLR.so.7.9.3
+bin/residual_stress_estimator: /usr/lib/libTKOffset.so.7.9.3
+bin/residual_stress_estimator: /usr/lib/libTKFeat.so.7.9.3
+bin/residual_stress_estimator: /usr/lib/libTKXMesh.so.7.9.3
+bin/residual_stress_estimator: /usr/lib/libgmpxx.so
+bin/residual_stress_estimator: /lib/libgmp.so
+bin/residual_stress_estimator: /lib/libmpfr.so
+bin/residual_stress_estimator: /usr/lib/libm.so
+bin/residual_stress_estimator: /usr/lib/libTKFillet.so.7.9.3
+bin/residual_stress_estimator: /usr/lib/libTKBool.so.7.9.3
+bin/residual_stress_estimator: /usr/lib/libTKBO.so.7.9.3
+bin/residual_stress_estimator: /usr/lib/libTKPrim.so.7.9.3
+bin/residual_stress_estimator: /usr/lib/libTKMesh.so.7.9.3
+bin/residual_stress_estimator: /usr/lib/libTKShHealing.so.7.9.3
+bin/residual_stress_estimator: /usr/lib/libTKTopAlgo.so.7.9.3
+bin/residual_stress_estimator: /usr/lib/libTKGeomAlgo.so.7.9.3
+bin/residual_stress_estimator: /usr/lib/libTKBRep.so.7.9.3
+bin/residual_stress_estimator: /usr/lib/libTKGeomBase.so.7.9.3
+bin/residual_stress_estimator: /usr/lib/libTKG3d.so.7.9.3
+bin/residual_stress_estimator: /usr/lib/libTKG2d.so.7.9.3
+bin/residual_stress_estimator: /usr/lib/libTKMath.so.7.9.3
+bin/residual_stress_estimator: /usr/lib/libTKernel.so.7.9.3
 bin/residual_stress_estimator: CMakeFiles/residual_stress_estimator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable bin/residual_stress_estimator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable bin/residual_stress_estimator"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/residual_stress_estimator.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

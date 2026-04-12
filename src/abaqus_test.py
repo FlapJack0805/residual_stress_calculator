@@ -336,6 +336,12 @@ def export_active_mesh_vtk(odb_path, step_name, out_vtk):
         for _ in active:
             f.write('%d\n' % VTK_QUADRATIC_TET)
 
+        f.write('CELL_DATA %d\n' % len(active))
+        f.write('SCALARS elem_label int 1\n')
+        f.write('LOOKUP_TABLE default\n')
+        for e in active:
+            f.write('%d\n' % e.label)
+
     odb.close()
 
 # -----------------------

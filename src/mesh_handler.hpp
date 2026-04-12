@@ -150,6 +150,7 @@ class MeshHandler
 {
 	C3t3 volume_mesh;
 	std::vector<std::shared_ptr<Node>> nodes; // each index is the node id
+	std::vector<Surface_mesh> candidate_cuts; // All of the possible cuts we can pick from
 	void set_tool_path(const std::filesystem::path& tool_path_stl);
 	std::vector<Tr::Cell_handle> set_simulated_tool_path(const Surface_mesh& tool_path_mesh);
 
@@ -158,7 +159,8 @@ public:
 	MeshHandler(const std::filesystem::path& mesh_stl, const std::filesystem::path& boundary_stl);
 	MeshHandler(const Surface_mesh& mesh, const std::vector<Point>& boundary_points);
 	void set_stress_in_cut(const std::filesystem::path& tool_path_stl, const std::filesystem::path& deformed_mesh);
-	C3t3 simulate_cut(const Surface_mesh& tool_path);
+	C3t3 simulate_cut(const Surface_mesh& tool_path); // This should be private once I'm done with testing but it's helpful to be able to call in test files for now
+	Surface_mesh make_best_cut();
 
 	inline const std::vector<std::shared_ptr<Node>>& get_nodes() const { return nodes; }
 	inline std::shared_ptr<Node> get_node(size_t id) { return nodes.at(id); }

@@ -31,6 +31,7 @@ events:
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
+      - "/var/lib/snapd/snap/bin/"
       - "/bin/"
     searched_directories:
       - "/mnt/extra_space/gmsh/bin/uname"
@@ -55,22 +56,12 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
+        - "/var/lib/snapd/snap/bin"
   -
     kind: "message-v1"
     backtrace:
       - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:212 (message)"
       - "CMakeLists.txt:16 (project)"
     message: |
-      The system is: Linux - 6.12.60-1-lts - x86_64
-...
-
----
-events:
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:212 (message)"
-      - "CMakeLists.txt:16 (project)"
-    message: |
-      The system is: Linux - 6.12.63-1-lts - x86_64
+      The system is: Linux - 6.12.75-1-lts - x86_64
 ...

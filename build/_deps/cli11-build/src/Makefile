@@ -113,6 +113,7 @@ preinstall/fast:
 
 # clear depends
 depend:
+	cd /home/jstifter/code/research/residual_stress/residual_stress_estimator/build && $(CMAKE_COMMAND) -P /home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/VerifyGlobs.cmake
 	cd /home/jstifter/code/research/residual_stress/residual_stress_estimator/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
@@ -136,6 +137,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
+	cd /home/jstifter/code/research/residual_stress/residual_stress_estimator/build && $(CMAKE_COMMAND) -P /home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/VerifyGlobs.cmake
 	cd /home/jstifter/code/research/residual_stress/residual_stress_estimator/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

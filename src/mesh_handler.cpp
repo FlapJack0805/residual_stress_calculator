@@ -698,3 +698,11 @@ void export_surface_mesh(const std::filesystem::path& out_path, const C3t3 *inpu
 
     std::cout << "[MeshHandler] Exported surface mesh to " << out_path << std::endl;
 }
+
+
+// Should simulate some cuts and pick the best one, then it should delete that cut from the list of candidate cuts
+// TODO: Get this code from Biruk
+Surface_mesh MeshHandler::make_best_cut()
+{
+    exit(0);
+}

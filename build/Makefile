@@ -113,6 +113,7 @@ preinstall/fast:
 
 # clear depends
 depend:
+	$(CMAKE_COMMAND) -P /home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
@@ -169,6 +170,19 @@ absolute_truth_tester/fast:
 .PHONY : absolute_truth_tester/fast
 
 #=============================================================================
+# Target rules for targets named abaqus_tester
+
+# Build rule for target.
+abaqus_tester: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 abaqus_tester
+.PHONY : abaqus_tester
+
+# fast build rule for target.
+abaqus_tester/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/build
+.PHONY : abaqus_tester/fast
+
+#=============================================================================
 # Target rules for targets named CLI11
 
 # Build rule for target.
@@ -181,6 +195,282 @@ CLI11/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/cli11-build/src/CMakeFiles/CLI11.dir/build.make _deps/cli11-build/src/CMakeFiles/CLI11.dir/build
 .PHONY : CLI11/fast
 
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.o: home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.o
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.o
+
+# target to build an object file
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/residual_stress_estimator.dir/build.make CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.o
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.o
+
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.i: home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.i
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.i
+
+# target to preprocess a source file
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/residual_stress_estimator.dir/build.make CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.i
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.i
+
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.s: home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.s
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.s
+
+# target to generate assembly for a file
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/residual_stress_estimator.dir/build.make CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.s
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.cpp.s
+
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.o: home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.o
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.o
+
+# target to build an object file
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/residual_stress_estimator.dir/build.make CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.o
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.o
+
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.i: home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.i
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.i
+
+# target to preprocess a source file
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/residual_stress_estimator.dir/build.make CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.i
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.i
+
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.s: home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.s
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.s
+
+# target to generate assembly for a file
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/residual_stress_estimator.dir/build.make CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.s
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.cpp.s
+
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.o: home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.o
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.o
+
+# target to build an object file
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/residual_stress_estimator.dir/build.make CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.o
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.o
+
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.i: home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.i
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.i
+
+# target to preprocess a source file
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/residual_stress_estimator.dir/build.make CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.i
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.i
+
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.s: home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.s
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.s
+
+# target to generate assembly for a file
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/residual_stress_estimator.dir/build.make CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.s
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.cpp.s
+
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.o: home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.o
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.o
+
+# target to build an object file
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/residual_stress_estimator.dir/build.make CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.o
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.o
+
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.i: home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.i
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.i
+
+# target to preprocess a source file
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/residual_stress_estimator.dir/build.make CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.i
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.i
+
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.s: home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.s
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.s
+
+# target to generate assembly for a file
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/residual_stress_estimator.dir/build.make CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.s
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.cpp.s
+
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.o: home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.o
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.o
+
+# target to build an object file
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/residual_stress_estimator.dir/build.make CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.o
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.o
+
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.i: home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.i
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.i
+
+# target to preprocess a source file
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/residual_stress_estimator.dir/build.make CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.i
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.i
+
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.s: home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.s
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.s
+
+# target to generate assembly for a file
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/residual_stress_estimator.dir/build.make CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.s
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.cpp.s
+
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.o: home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.o
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.o
+
+# target to build an object file
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/residual_stress_estimator.dir/build.make CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.o
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.o
+
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.i: home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.i
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.i
+
+# target to preprocess a source file
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/residual_stress_estimator.dir/build.make CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.i
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.i
+
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.s: home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.s
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.s
+
+# target to generate assembly for a file
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/residual_stress_estimator.dir/build.make CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.s
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.cpp.s
+
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.o: home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.o
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.o
+
+# target to build an object file
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/residual_stress_estimator.dir/build.make CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.o
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.o
+
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.i: home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.i
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.i
+
+# target to preprocess a source file
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/residual_stress_estimator.dir/build.make CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.i
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.i
+
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.s: home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.s
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.s
+
+# target to generate assembly for a file
+home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/residual_stress_estimator.dir/build.make CMakeFiles/residual_stress_estimator.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.s
+.PHONY : home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.cpp.s
+
+src/abaqus_test.o: src/abaqus_test.cpp.o
+.PHONY : src/abaqus_test.o
+
+# target to build an object file
+src/abaqus_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/src/abaqus_test.cpp.o
+.PHONY : src/abaqus_test.cpp.o
+
+src/abaqus_test.i: src/abaqus_test.cpp.i
+.PHONY : src/abaqus_test.i
+
+# target to preprocess a source file
+src/abaqus_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/src/abaqus_test.cpp.i
+.PHONY : src/abaqus_test.cpp.i
+
+src/abaqus_test.s: src/abaqus_test.cpp.s
+.PHONY : src/abaqus_test.s
+
+# target to generate assembly for a file
+src/abaqus_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/src/abaqus_test.cpp.s
+.PHONY : src/abaqus_test.cpp.s
+
 src/fea_solver.o: src/fea_solver.cpp.o
 .PHONY : src/fea_solver.o
 
@@ -190,6 +480,7 @@ src/fea_solver.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/src/fea_solver.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/src/fea_solver.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/src/fea_solver.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/src/fea_solver.cpp.o
 .PHONY : src/fea_solver.cpp.o
 
 src/fea_solver.i: src/fea_solver.cpp.i
@@ -201,6 +492,7 @@ src/fea_solver.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/src/fea_solver.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/src/fea_solver.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/src/fea_solver.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/src/fea_solver.cpp.i
 .PHONY : src/fea_solver.cpp.i
 
 src/fea_solver.s: src/fea_solver.cpp.s
@@ -212,6 +504,7 @@ src/fea_solver.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/src/fea_solver.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/src/fea_solver.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/src/fea_solver.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/src/fea_solver.cpp.s
 .PHONY : src/fea_solver.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -247,6 +540,7 @@ src/mesh_handler.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/src/mesh_handler.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/src/mesh_handler.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/src/mesh_handler.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/src/mesh_handler.cpp.o
 .PHONY : src/mesh_handler.cpp.o
 
 src/mesh_handler.i: src/mesh_handler.cpp.i
@@ -258,6 +552,7 @@ src/mesh_handler.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/src/mesh_handler.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/src/mesh_handler.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/src/mesh_handler.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/src/mesh_handler.cpp.i
 .PHONY : src/mesh_handler.cpp.i
 
 src/mesh_handler.s: src/mesh_handler.cpp.s
@@ -269,6 +564,7 @@ src/mesh_handler.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mesh_handler_tester.dir/build.make CMakeFiles/mesh_handler_tester.dir/src/mesh_handler.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_stress_test.dir/build.make CMakeFiles/set_stress_test.dir/src/mesh_handler.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/absolute_truth_tester.dir/build.make CMakeFiles/absolute_truth_tester.dir/src/mesh_handler.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abaqus_tester.dir/build.make CMakeFiles/abaqus_tester.dir/src/mesh_handler.cpp.s
 .PHONY : src/mesh_handler.cpp.s
 
 src/mesh_handler_tester.o: src/mesh_handler_tester.cpp.o
@@ -352,10 +648,35 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CLI11"
+	@echo "... abaqus_tester"
 	@echo "... absolute_truth_tester"
 	@echo "... mesh_handler_tester"
 	@echo "... residual_stress_estimator"
 	@echo "... set_stress_test"
+	@echo "... home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.o"
+	@echo "... home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.i"
+	@echo "... home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/curve.s"
+	@echo "... home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.o"
+	@echo "... home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.i"
+	@echo "... home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/line.s"
+	@echo "... home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.o"
+	@echo "... home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.i"
+	@echo "... home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/path.s"
+	@echo "... home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.o"
+	@echo "... home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.i"
+	@echo "... home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/toolpath.s"
+	@echo "... home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.o"
+	@echo "... home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.i"
+	@echo "... home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/util.s"
+	@echo "... home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.o"
+	@echo "... home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.i"
+	@echo "... home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_view.s"
+	@echo "... home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.o"
+	@echo "... home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.i"
+	@echo "... home/jstifter/code/research/residual_stress/surfacic_toolpaths/src/visualization/glfw_occt_window.s"
+	@echo "... src/abaqus_test.o"
+	@echo "... src/abaqus_test.i"
+	@echo "... src/abaqus_test.s"
 	@echo "... src/fea_solver.o"
 	@echo "... src/fea_solver.i"
 	@echo "... src/fea_solver.s"
@@ -385,6 +706,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
+	$(CMAKE_COMMAND) -P /home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
