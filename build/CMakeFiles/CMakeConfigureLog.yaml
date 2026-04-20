@@ -45,8 +45,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -121,8 +119,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -180,8 +176,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -219,8 +213,6 @@ events:
     found: "/usr/share/cmake/Modules/CMakeCCompilerId.c.in"
     search_context:
       ENV{PATH}:
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
@@ -301,8 +293,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -353,8 +343,6 @@ events:
     found: "/usr/bin/ranlib"
     search_context:
       ENV{PATH}:
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
@@ -413,8 +401,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -465,8 +451,6 @@ events:
     found: "/usr/bin/ld"
     search_context:
       ENV{PATH}:
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
@@ -525,8 +509,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -577,8 +559,6 @@ events:
     found: "/usr/bin/objdump"
     search_context:
       ENV{PATH}:
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
@@ -637,8 +617,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -689,8 +667,6 @@ events:
     found: "/usr/bin/readelf"
     search_context:
       ENV{PATH}:
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
@@ -757,8 +733,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -809,8 +783,6 @@ events:
     found: "/usr/bin/addr2line"
     search_context:
       ENV{PATH}:
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
@@ -873,8 +845,6 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
@@ -972,8 +942,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -1067,8 +1035,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -1116,8 +1082,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -1155,8 +1119,6 @@ events:
     found: "/usr/share/cmake/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       ENV{PATH}:
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
@@ -1276,8 +1238,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -1371,8 +1331,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -1392,8 +1350,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-mkHpEJ"
-      binary: "/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-mkHpEJ"
+      source: "/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-1fcRc7"
+      binary: "/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-1fcRc7"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1402,13 +1360,13 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-mkHpEJ'
+        Change Dir: '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-1fcRc7'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_be023/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_be023.dir/build.make CMakeFiles/cmTC_be023.dir/build
-        make[1]: Entering directory '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-mkHpEJ'
-        Building C object CMakeFiles/cmTC_be023.dir/CMakeCCompilerABI.c.o
-        /usr/lib/ccache/bin/cc   -v -o CMakeFiles/cmTC_be023.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_cce52/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_cce52.dir/build.make CMakeFiles/cmTC_cce52.dir/build
+        make[1]: Entering directory '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-1fcRc7'
+        Building C object CMakeFiles/cmTC_cce52.dir/CMakeCCompilerABI.c.o
+        /usr/lib/ccache/bin/cc   -v -o CMakeFiles/cmTC_cce52.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         Target: x86_64-pc-linux-gnu
@@ -1437,8 +1395,8 @@ events:
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/
         COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-c' '-o' 'CMakeFiles/cmTC_9a204.dir/CMakeCCompilerABI.c.o' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9a204.dir/CMakeCCompilerABI.c.'
-        Linking C executable cmTC_be023
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_be023.dir/link.txt --verbose=1
+        Linking C executable cmTC_cce52
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cce52.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper
@@ -1449,14 +1407,14 @@ events:
         gcc version 15.2.1 20260209 (GCC) 
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_be023' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_be023.'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccL7FMCF.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_be023 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_be023.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cce52' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_cce52.'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccg6INmR.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_cce52 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_cce52.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
         collect2 version 15.2.1 20260209
-        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccL7FMCF.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_be023 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_be023.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccg6INmR.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_cce52 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_cce52.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
         GNU ld (GNU Binutils) 2.46
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_be023' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_be023.'
-        /usr/lib/ccache/bin/cc  -v -Wl,-v CMakeFiles/cmTC_be023.dir/CMakeCCompilerABI.c.o -o cmTC_be023
-        make[1]: Leaving directory '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-mkHpEJ'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cce52' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_cce52.'
+        /usr/lib/ccache/bin/cc  -v -Wl,-v CMakeFiles/cmTC_cce52.dir/CMakeCCompilerABI.c.o -o cmTC_cce52
+        make[1]: Leaving directory '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-1fcRc7'
         
       exitCode: 0
   -
@@ -1491,13 +1449,13 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-mkHpEJ']
+        ignore line: [Change Dir: '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-1fcRc7']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_be023/fast]
-        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_be023.dir/build.make CMakeFiles/cmTC_be023.dir/build]
-        ignore line: [make[1]: Entering directory '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-mkHpEJ']
-        ignore line: [Building C object CMakeFiles/cmTC_be023.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/lib/ccache/bin/cc   -v -o CMakeFiles/cmTC_be023.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_cce52/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_cce52.dir/build.make CMakeFiles/cmTC_cce52.dir/build]
+        ignore line: [make[1]: Entering directory '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-1fcRc7']
+        ignore line: [Building C object CMakeFiles/cmTC_cce52.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/lib/ccache/bin/cc   -v -o CMakeFiles/cmTC_cce52.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [Target: x86_64-pc-linux-gnu]
@@ -1526,8 +1484,8 @@ events:
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/]
         ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-c' '-o' 'CMakeFiles/cmTC_9a204.dir/CMakeCCompilerABI.c.o' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9a204.dir/CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_be023]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_be023.dir/link.txt --verbose=1]
+        ignore line: [Linking C executable cmTC_cce52]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cce52.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper]
@@ -1538,13 +1496,13 @@ events:
         ignore line: [gcc version 15.2.1 20260209 (GCC) ]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_be023' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_be023.']
-        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccL7FMCF.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_be023 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_be023.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cce52' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_cce52.']
+        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccg6INmR.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_cce52 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_cce52.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccL7FMCF.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccg6INmR.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -1559,7 +1517,7 @@ events:
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-pie] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_be023] ==> ignore
+          arg [cmTC_cce52] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o]
@@ -1571,7 +1529,7 @@ events:
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_be023.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_cce52.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [--push-state] ==> ignore
           arg [--as-needed] ==> ignore
@@ -1586,7 +1544,7 @@ events:
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
         ignore line: [collect2 version 15.2.1 20260209]
-        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccL7FMCF.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_be023 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_be023.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccg6INmR.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_cce52 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_cce52.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
         linker tool for 'C': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o] ==> [/usr/lib/Scrt1.o]
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o] ==> [/usr/lib/crti.o]
@@ -1623,8 +1581,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-lN5cbV"
-      binary: "/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-lN5cbV"
+      source: "/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-LwJSTp"
+      binary: "/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-LwJSTp"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1634,13 +1592,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-lN5cbV'
+        Change Dir: '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-LwJSTp'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7a686/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_7a686.dir/build.make CMakeFiles/cmTC_7a686.dir/build
-        make[1]: Entering directory '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-lN5cbV'
-        Building CXX object CMakeFiles/cmTC_7a686.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/lib/ccache/bin/c++   -v -o CMakeFiles/cmTC_7a686.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8e47c/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_8e47c.dir/build.make CMakeFiles/cmTC_8e47c.dir/build
+        make[1]: Entering directory '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-LwJSTp'
+        Building CXX object CMakeFiles/cmTC_8e47c.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/lib/ccache/bin/c++   -v -o CMakeFiles/cmTC_8e47c.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         Target: x86_64-pc-linux-gnu
@@ -1672,8 +1630,8 @@ events:
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/
         COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-c' '-o' 'CMakeFiles/cmTC_4a878.dir/CMakeCXXCompilerABI.cpp.o' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4a878.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_7a686
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7a686.dir/link.txt --verbose=1
+        Linking CXX executable cmTC_8e47c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8e47c.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper
@@ -1684,14 +1642,14 @@ events:
         gcc version 15.2.1 20260209 (GCC) 
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7a686' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_7a686.'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBnMJjs.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_7a686 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_7a686.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8e47c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8e47c.'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYoj1B3.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_8e47c /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_8e47c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
         collect2 version 15.2.1 20260209
-        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBnMJjs.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_7a686 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_7a686.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYoj1B3.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_8e47c /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_8e47c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
         GNU ld (GNU Binutils) 2.46
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7a686' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_7a686.'
-        /usr/lib/ccache/bin/c++  -v -Wl,-v CMakeFiles/cmTC_7a686.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_7a686
-        make[1]: Leaving directory '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-lN5cbV'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8e47c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8e47c.'
+        /usr/lib/ccache/bin/c++  -v -Wl,-v CMakeFiles/cmTC_8e47c.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_8e47c
+        make[1]: Leaving directory '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-LwJSTp'
         
       exitCode: 0
   -
@@ -1732,13 +1690,13 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-lN5cbV']
+        ignore line: [Change Dir: '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-LwJSTp']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7a686/fast]
-        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_7a686.dir/build.make CMakeFiles/cmTC_7a686.dir/build]
-        ignore line: [make[1]: Entering directory '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-lN5cbV']
-        ignore line: [Building CXX object CMakeFiles/cmTC_7a686.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/lib/ccache/bin/c++   -v -o CMakeFiles/cmTC_7a686.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8e47c/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_8e47c.dir/build.make CMakeFiles/cmTC_8e47c.dir/build]
+        ignore line: [make[1]: Entering directory '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-LwJSTp']
+        ignore line: [Building CXX object CMakeFiles/cmTC_8e47c.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/lib/ccache/bin/c++   -v -o CMakeFiles/cmTC_8e47c.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [Target: x86_64-pc-linux-gnu]
@@ -1770,8 +1728,8 @@ events:
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/]
         ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-c' '-o' 'CMakeFiles/cmTC_4a878.dir/CMakeCXXCompilerABI.cpp.o' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4a878.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_7a686]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7a686.dir/link.txt --verbose=1]
+        ignore line: [Linking CXX executable cmTC_8e47c]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8e47c.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper]
@@ -1782,13 +1740,13 @@ events:
         ignore line: [gcc version 15.2.1 20260209 (GCC) ]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7a686' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_7a686.']
-        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBnMJjs.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_7a686 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_7a686.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8e47c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8e47c.']
+        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYoj1B3.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_8e47c /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_8e47c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccBnMJjs.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccYoj1B3.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -1803,7 +1761,7 @@ events:
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-pie] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_7a686] ==> ignore
+          arg [cmTC_8e47c] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o]
@@ -1815,7 +1773,7 @@ events:
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_7a686.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_8e47c.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -1826,7 +1784,7 @@ events:
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
         ignore line: [collect2 version 15.2.1 20260209]
-        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBnMJjs.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_7a686 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_7a686.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYoj1B3.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_8e47c /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_8e47c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
         linker tool for 'CXX': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o] ==> [/usr/lib/Scrt1.o]
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o] ==> [/usr/lib/crti.o]
@@ -1863,7 +1821,7 @@ events:
       - "/usr/share/cmake/Modules/FetchContent.cmake:2155:EVAL:2 (__FetchContent_doPopulation)"
       - "/usr/share/cmake/Modules/FetchContent.cmake:2155 (cmake_language)"
       - "/usr/share/cmake/Modules/FetchContent.cmake:2394 (__FetchContent_Populate)"
-      - "CMakeLists.txt:15 (FetchContent_MakeAvailable)"
+      - "CMakeLists.txt:17 (FetchContent_MakeAvailable)"
     mode: "program"
     variable: "GIT_EXECUTABLE"
     description: "Git command line client"
@@ -1919,8 +1877,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -1948,7 +1904,7 @@ events:
       - "/usr/lib/cmake/CGAL/CGAL_SetupGMP.cmake:24 (find_package)"
       - "/usr/lib/cmake/CGAL/CGAL_SetupCGALDependencies.cmake:37 (include)"
       - "/usr/lib/cmake/CGAL/CGALConfig.cmake:169 (include)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:19 (find_package)"
     mode: "path"
     variable: "GMP_INCLUDE_DIR"
     description: "The directory containing the GMP header files"
@@ -2056,8 +2012,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -2087,7 +2041,7 @@ events:
       - "/usr/lib/cmake/CGAL/CGAL_SetupGMP.cmake:24 (find_package)"
       - "/usr/lib/cmake/CGAL/CGAL_SetupCGALDependencies.cmake:37 (include)"
       - "/usr/lib/cmake/CGAL/CGALConfig.cmake:169 (include)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:19 (find_package)"
     mode: "library"
     variable: "GMP_LIBRARY_RELEASE"
     description: "Path to the Release GMP library"
@@ -2166,8 +2120,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -2197,7 +2149,7 @@ events:
       - "/usr/lib/cmake/CGAL/CGAL_SetupGMP.cmake:24 (find_package)"
       - "/usr/lib/cmake/CGAL/CGAL_SetupCGALDependencies.cmake:37 (include)"
       - "/usr/lib/cmake/CGAL/CGALConfig.cmake:169 (include)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:19 (find_package)"
     mode: "library"
     variable: "GMP_LIBRARY_DEBUG"
     description: "Path to the Debug GMP library"
@@ -2361,8 +2313,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -2392,7 +2342,7 @@ events:
       - "/usr/lib/cmake/CGAL/CGAL_SetupGMP.cmake:25 (find_package)"
       - "/usr/lib/cmake/CGAL/CGAL_SetupCGALDependencies.cmake:37 (include)"
       - "/usr/lib/cmake/CGAL/CGALConfig.cmake:169 (include)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:19 (find_package)"
     mode: "path"
     variable: "MPFR_INCLUDE_DIR"
     description: "The directory containing the MPFR header files"
@@ -2500,8 +2450,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -2531,7 +2479,7 @@ events:
       - "/usr/lib/cmake/CGAL/CGAL_SetupGMP.cmake:25 (find_package)"
       - "/usr/lib/cmake/CGAL/CGAL_SetupCGALDependencies.cmake:37 (include)"
       - "/usr/lib/cmake/CGAL/CGALConfig.cmake:169 (include)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:19 (find_package)"
     mode: "library"
     variable: "MPFR_LIBRARIES"
     description: "Path to the MPFR library"
@@ -2609,8 +2557,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -2640,7 +2586,7 @@ events:
       - "/usr/lib/cmake/CGAL/CGAL_SetupGMP.cmake:28 (find_package)"
       - "/usr/lib/cmake/CGAL/CGAL_SetupCGALDependencies.cmake:37 (include)"
       - "/usr/lib/cmake/CGAL/CGALConfig.cmake:169 (include)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:19 (find_package)"
     mode: "path"
     variable: "GMPXX_INCLUDE_DIR"
     description: "The directory containing the GMPXX include files"
@@ -2740,8 +2686,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -2771,7 +2715,7 @@ events:
       - "/usr/lib/cmake/CGAL/CGAL_SetupGMP.cmake:28 (find_package)"
       - "/usr/lib/cmake/CGAL/CGAL_SetupCGALDependencies.cmake:37 (include)"
       - "/usr/lib/cmake/CGAL/CGALConfig.cmake:169 (include)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:19 (find_package)"
     mode: "library"
     variable: "GMPXX_LIBRARIES"
     description: "Path to the GMPXX library"
@@ -2871,8 +2815,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -2903,7 +2845,7 @@ events:
       - "/usr/lib/cmake/CGAL/CGAL_SetupBoost.cmake:17 (find_package)"
       - "/usr/lib/cmake/CGAL/CGAL_SetupCGALDependencies.cmake:48 (include)"
       - "/usr/lib/cmake/CGAL/CGALConfig.cmake:169 (include)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:19 (find_package)"
     name: "boost_headers"
     configs:
       -
@@ -2969,8 +2911,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -2997,7 +2937,7 @@ events:
       - "/usr/lib/cmake/CGAL/CGAL_SetupBoost.cmake:17 (find_package)"
       - "/usr/lib/cmake/CGAL/CGAL_SetupCGALDependencies.cmake:48 (include)"
       - "/usr/lib/cmake/CGAL/CGALConfig.cmake:169 (include)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:19 (find_package)"
     name: "Boost"
     configs:
       -
@@ -3489,8 +3429,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -3525,12 +3463,12 @@ events:
       - "/usr/lib/cmake/CGAL/CGAL_SetupCGALDependencies.cmake:108 (find_package)"
       - "/usr/lib/cmake/CGAL/CGAL_setup_target_dependencies.cmake:3 (CGAL_setup_CGAL_dependencies)"
       - "/usr/lib/cmake/CGAL/CGALConfig.cmake:192 (CGAL_setup_target_dependencies)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:19 (find_package)"
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-HQ9rlS"
-      binary: "/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-HQ9rlS"
+      source: "/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-uZvWzU"
+      binary: "/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-uZvWzU"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -3540,23 +3478,23 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-HQ9rlS'
+        Change Dir: '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-uZvWzU'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_39786/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_39786.dir/build.make CMakeFiles/cmTC_39786.dir/build
-        make[1]: Entering directory '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-HQ9rlS'
-        Building C object CMakeFiles/cmTC_39786.dir/src.c.o
-        /usr/lib/ccache/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_39786.dir/src.c.o -c /home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-HQ9rlS/src.c
-        Linking C executable cmTC_39786
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_39786.dir/link.txt --verbose=1
-        /usr/lib/ccache/bin/cc CMakeFiles/cmTC_39786.dir/src.c.o -o cmTC_39786
-        make[1]: Leaving directory '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-HQ9rlS'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5a3ba/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_5a3ba.dir/build.make CMakeFiles/cmTC_5a3ba.dir/build
+        make[1]: Entering directory '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-uZvWzU'
+        Building C object CMakeFiles/cmTC_5a3ba.dir/src.c.o
+        /usr/lib/ccache/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_5a3ba.dir/src.c.o -c /home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-uZvWzU/src.c
+        Linking C executable cmTC_5a3ba
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5a3ba.dir/link.txt --verbose=1
+        /usr/lib/ccache/bin/cc CMakeFiles/cmTC_5a3ba.dir/src.c.o -o cmTC_5a3ba
+        make[1]: Leaving directory '/home/jstifter/code/research/residual_stress/residual_stress_estimator/build/CMakeFiles/CMakeScratch/TryCompile-uZvWzU'
         
       exitCode: 0
   -
     kind: "find_package-v1"
     backtrace:
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:19 (find_package)"
     name: "CGAL"
     configs:
       -
@@ -3638,8 +3576,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -3667,7 +3603,7 @@ events:
   -
     kind: "find_package-v1"
     backtrace:
-      - "CMakeLists.txt:20 (find_package)"
+      - "CMakeLists.txt:22 (find_package)"
     name: "NLopt"
     configs:
       -
@@ -3749,8 +3685,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -3778,7 +3712,7 @@ events:
   -
     kind: "find_package-v1"
     backtrace:
-      - "CMakeLists.txt:21 (find_package)"
+      - "CMakeLists.txt:23 (find_package)"
     name: "glfw3"
     configs:
       -
@@ -3860,8 +3794,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
@@ -3889,7 +3821,7 @@ events:
   -
     kind: "find_package-v1"
     backtrace:
-      - "CMakeLists.txt:24 (find_package)"
+      - "CMakeLists.txt:27 (find_package)"
     name: "OpenCASCADE"
     components:
       -
@@ -3980,8 +3912,6 @@ events:
       version: "7.9.3"
     search_context:
       ENV{PATH}:
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"

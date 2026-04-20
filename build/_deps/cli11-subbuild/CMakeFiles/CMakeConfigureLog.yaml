@@ -45,8 +45,6 @@ events:
         - "/usr/lib/ccache/bin/"
         - "/mnt/extra_space/gmsh/bin"
         - "/usr/lib/ccache/bin/"
-        - "/mnt/extra_space/gmsh/bin"
-        - "/usr/lib/ccache/bin/"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
