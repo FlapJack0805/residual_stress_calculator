@@ -60,6 +60,18 @@
 #include <CGAL/Polygon_mesh_processing/orient_polygon_soup.h>
 #include <CGAL/Polygon_mesh_processing/stitch_borders.h>
 
+
+#include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
+#include <CGAL/Surface_mesh.h>
+#include <CGAL/centroid.h>
+#include <cmath>
+#include <vector>
+#include <array>
+#include <queue>
+#include <unordered_set>
+#include <unordered_map>
+#include <limits>
+#include <stdexcept>
 #include "nlopt.hpp"
 
 #include <filesystem>
@@ -83,6 +95,14 @@ using Tree = CGAL::AABB_tree<Traits>;
 class FEA; 
 class MeshHandler;
 
+
+enum class CutCheckResult
+{
+    OK,
+    INVALID_CUT_GEOMETRY,
+    TOP_FACE_NOT_EXPOSED,
+    CUT_DOES_NOT_ENTER_MATERIAL
+};
 
 /*
  * UN_CUT means the node hasn't been cut yet
@@ -135,6 +155,12 @@ struct Node
 	Node() : status(NodeStatus::UN_CUT), is_boundary(false), is_exterior(false) {}
 };
 
+struct CandidateCut
+{
+    Surface_mesh mesh;
+    std::vector<Point> top_face_boundary;
+    Vector inward_direction;
+};
 
 struct OptimizationContext 
 {
@@ -149,14 +175,17 @@ struct OptimizationContext
 class MeshHandler
 {
 	C3t3 volume_mesh;
+	Surface_mesh final_mesh;
+	double final_mesh_volume; // just precalculate in the constructor cause this never changes
 	std::vector<std::shared_ptr<Node>> nodes; // each index is the node id
 	std::vector<Surface_mesh> candidate_cuts; // All of the possible cuts we can pick from
 	void set_tool_path(const std::filesystem::path& tool_path_stl);
 	std::vector<Tr::Cell_handle> set_simulated_tool_path(const Surface_mesh& tool_path_mesh);
+	CutCheckResult check_cut_possible(const C3t3& current_mesh, const Surface_mesh& candidate_cut, double eps) const;
 
 
 public:
-	MeshHandler(const std::filesystem::path& mesh_stl, const std::filesystem::path& boundary_stl);
+	MeshHandler(const std::filesystem::path& mesh_stl, const std::filesystem::path& boundary_stl, std::vector<Surface_mesh> candidate_cuts_in);
 	MeshHandler(const Surface_mesh& mesh, const std::vector<Point>& boundary_points);
 	void set_stress_in_cut(const std::filesystem::path& tool_path_stl, const std::filesystem::path& deformed_mesh);
 	C3t3 simulate_cut(const Surface_mesh& tool_path); // This should be private once I'm done with testing but it's helpful to be able to call in test files for now

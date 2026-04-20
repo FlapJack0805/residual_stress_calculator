@@ -17,6 +17,9 @@
 #include <optional>
 #include <cctype>
 #include <algorithm>
+#include <cstdlib>
+#include <iostream>
+#include <string>
 
 #define LENGTH_OF_CUT 10 // TODO: Find out a reasonable size for each cut
 
@@ -417,6 +420,7 @@ static GCode parse_gcode_line(const std::string& raw_line)
         int gcode_int;
         double value;
 
+
         if (parse_word_int(token, 'G', gcode_int)) {
             move.g = gcode_int;
         } else if (parse_word_value(token, 'X', value)) {
@@ -482,6 +486,30 @@ static double xy_distance(const Position& a, const Position& b)
     return std::sqrt(dx * dx + dy * dy);
 }
 
+
+
+void convert_stl_to_vtk_python(const std::string& stl_path)
+{
+    std::string output = "starting_mesh_vtk.vtk";
+
+    std::string python = "/home/jstifter/code/research/residual_stress/residual_stress_estimator/src/venv/bin/python";
+
+    std::string cmd = python + " /home/jstifter/code/research/residual_stress/residual_stress_estimator/src/convert_stl_to_vtk.py \"" +
+                      stl_path + "\" \"" +
+                      output + "\"";
+
+    std::cout << "Running: " << cmd << std::endl;
+
+    int rc = std::system(cmd.c_str());
+
+    if (rc != 0)
+    {
+        throw std::runtime_error("STL → VTK conversion failed");
+    }
+
+    std::cout << "Converted STL to " << output << std::endl;
+}
+
 // -------------------------------
 // Main closed-loop driver
 // -------------------------------
@@ -494,11 +522,12 @@ int main(int argc, char** argv)
     fs::path starting_mesh_stl, boundary_mesh_stl, starting_mesh_vtk, g_code_file;
 
     app.add_option("--starting_mesh_stl", starting_mesh_stl)->required();
-    //app.add_option("--boundary_mesh_stl", boundary_mesh_stl)->required();
-    //app.add_option("--starting_mesh_vtk", starting_mesh_vtk)->required(); Just testing G-CODE parsing right now
+    app.add_option("--boundary_mesh_stl", boundary_mesh_stl)->required();
     app.add_option("--g_code", g_code_file)->required();
 
     CLI11_PARSE(app, argc, argv);
+
+    convert_stl_to_vtk_python(starting_mesh_stl);
 
     Config cfg;
 
@@ -542,6 +571,7 @@ int main(int argc, char** argv)
         }
 
         Position next_pos = current_pos;
+
         if (move.x.has_value()) next_pos.x = *move.x;
         if (move.y.has_value()) next_pos.y = *move.y;
         if (move.z.has_value()) next_pos.z = *move.z;
@@ -565,10 +595,19 @@ int main(int argc, char** argv)
         // G1 = linear cutting move
         if (g == 1)
         {
+            const bool xy_changed =
+                (next_pos.x != current_pos.x) ||
+                (next_pos.y != current_pos.y);
+
+            // Skip pure-Z plunges / retracts for now
+            if (!xy_changed) {
+                current_pos = next_pos;
+                continue;
+            }
+
             const double line_length = xy_distance(current_pos, next_pos);
 
-            // Only add if there is actual XY motion or Z motion you want represented
-            if (line_length > 0.0 /*|| next_pos.z != current_pos.z*/) {
+            if (line_length > 0.0) {
                 lines.push_back(Line{
                     position_to_point3D(current_pos),
                     delta_to_vec3D(current_pos, next_pos)
@@ -622,11 +661,9 @@ int main(int argc, char** argv)
         flush_toolpath_chunk(cfg, tool, lines, arcs, splines, circles, cut_meshes);
     }
 
-    return 0;
-
     // 1) Init truth baseline
     abaqus_init_case(cfg);
-    MeshHandler mesh_handler(starting_mesh_stl, boundary_mesh_stl);
+    MeshHandler mesh_handler(starting_mesh_stl, boundary_mesh_stl, cut_meshes);
     VtkMesh vtk_mesh = load_vtk_unstructured_with_elem_label(starting_mesh_vtk);
 
     // current truth after BASE

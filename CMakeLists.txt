@@ -20,6 +20,7 @@ find_package(MPFR REQUIRED)
 find_package(NLopt REQUIRED)
 find_package(glfw3 REQUIRED)
 
+
 # Only core OCCT components
 find_package(OpenCASCADE REQUIRED COMPONENTS
   FoundationClasses
@@ -62,29 +63,29 @@ function(link_common target)
   )
 endfunction()
 
-add_executable(residual_stress_estimator
-  ${SRC_FILES}
-  src/main.cpp
-)
-link_common(residual_stress_estimator)
+#add_executable(residual_stress_estimator
+#  ${SRC_FILES}
+#  src/main.cpp
+#)
+#link_common(residual_stress_estimator)
+#
+#add_executable(mesh_handler_tester
+#  ${SRC_FILES}
+#  src/mesh_handler_tester.cpp
+#)
+#link_common(mesh_handler_tester)
 
-add_executable(mesh_handler_tester
-  ${SRC_FILES}
-  src/mesh_handler_tester.cpp
-)
-link_common(mesh_handler_tester)
+#add_executable(set_stress_test
+#  ${SRC_FILES}
+#  src/set_stress_test.cpp
+#)
+#link_common(set_stress_test)
 
-add_executable(set_stress_test
-  ${SRC_FILES}
-  src/set_stress_test.cpp
-)
-link_common(set_stress_test)
-
-add_executable(absolute_truth_tester
-  ${SRC_FILES}
-  src/tester.cpp
-)
-link_common(absolute_truth_tester)
+#add_executable(absolute_truth_tester
+#  ${SRC_FILES}
+#  src/tester.cpp
+#)
+#link_common(absolute_truth_tester)
 
 add_executable(abaqus_tester
   ${SRC_FILES}
@@ -93,10 +94,10 @@ add_executable(abaqus_tester
 link_common(abaqus_tester)
 
 set_target_properties(
-  residual_stress_estimator
-  mesh_handler_tester
-  set_stress_test
-  absolute_truth_tester
+  #residual_stress_estimator
+  #mesh_handler_tester
+  #set_stress_test
+  #absolute_truth_tester
   abaqus_tester
   PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin

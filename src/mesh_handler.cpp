@@ -7,7 +7,8 @@
  * It takes in an stl file for the material mesh and for the boundary mesh which then makes our volumetric mesh that we will use all of our computations for 
  * as well as marking every node that is a boundary node.
 */
-MeshHandler::MeshHandler(const std::filesystem::path& mesh_stl, const std::filesystem::path& boundary_stl)
+MeshHandler::MeshHandler(const std::filesystem::path& mesh_stl, const std::filesystem::path& boundary_stl, std::vector<Surface_mesh> candidate_cuts_in)
+    : candidate_cuts(candidate_cuts_in)
 {
     Surface_mesh surface_mesh;
     Surface_mesh boundary_mesh;
@@ -701,8 +702,49 @@ void export_surface_mesh(const std::filesystem::path& out_path, const C3t3 *inpu
 
 
 // Should simulate some cuts and pick the best one, then it should delete that cut from the list of candidate cuts
-// TODO: Get this code from Biruk
 Surface_mesh MeshHandler::make_best_cut()
 {
-    exit(0);
+    if (candidate_cuts.empty())
+    {
+        throw std::runtime_error("candidate_cuts is empty");
+    }
+
+
+    auto best_it = candidate_cuts.end();
+    double best_mesh_volume = -1;
+    for (auto it = candidate_cuts.begin(); it != candidate_cuts.end(); ++it)
+    {
+        /*
+         * Just allow anything any cut through right now. I just wanna get this simulator running tonight
+        if (!is_cut_possible(volume_mesh, *it, Vector{0, 0, 1}, 1e-6, 1e-6))
+        {
+            continue;
+        }
+         */
+
+        double curr_intersection_volume = intersection_volume(simulate_cut(*it), final_mesh);
+
+        constexpr double eps = 1e-9;
+        if (std::abs(curr_intersection_volume - final_mesh_volume) < eps)
+        {
+            Surface_mesh perfect_cut = *it;
+            candidate_cuts.erase(it);
+            return perfect_cut;
+        }
+
+        if (curr_intersection_volume > best_mesh_volume)
+        {
+            best_mesh_volume = curr_intersection_volume;
+            best_it = it;
+        }
+    }
+
+    if (best_it == candidate_cuts.end())
+    {
+        throw std::runtime_error("No best cut found");
+    }
+
+    Surface_mesh best_mesh = *best_it;
+    candidate_cuts.erase(best_it);
+    return best_mesh;
 }

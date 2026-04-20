@@ -808,12 +808,13 @@ C3t3 FEA::simulate_cut(std::vector<Tr::Cell_handle> cut_elems)
     // ----------------------------------------------------
 
     inp << "*ELSET, ELSET=CUT_ELEMS\n";
-
-    for (auto elem = cell_to_elem_id.begin(); elem != cell_to_elem_id.end(); ++elem)
+    for (const auto& cell : cut_elems)
     {
-        elem_id = elem->second.first;
-        
-        inp << elem_id << '\n';
+        auto it = cell_to_elem_id.find(cell);
+        if (it != cell_to_elem_id.end())
+        {
+            inp << it->second.first << '\n';
+        }
     }
     
     inp << "*STEP\n*STATIC\n*END STEP\n";
